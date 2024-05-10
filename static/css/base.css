@@ -56,13 +56,20 @@ body {
     border: 1px solid black !important;
 }
 
+/* -------------------------------- Home page app */
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */

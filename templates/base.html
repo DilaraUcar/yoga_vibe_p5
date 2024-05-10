@@ -15,8 +15,10 @@
     {% endblock %}
 
     {% block corecss %}
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -24,6 +26,7 @@
     {% endblock %}
 
     {% block corejs %}
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
@@ -47,11 +50,10 @@
         <div class="row pt-lg-2 d-none d-lg-flex">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <div class="col-lg-4 d-flex justify-content-start">
-                    <!-- Move the search form to the left -->
                     <form class="w-100" method="GET" action="">
                         <div class="input-group">
-                            <input class="form-control border border-black rounded-0" type="text" name="q"
-                                placeholder="Search our site">
+                            <input class="form-control border border-black rounded-0 col-sm-6" type="text" name="q"
+                                placeholder="Search our site...">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                     <span class="icon">
@@ -62,15 +64,14 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center">
+                <div class="col-lg-4 d-flex justify-content-center align-items-center">
                     <!-- Center the logo -->
                     <a class="nav-link main-logo-link navbar-brand logo-btn" href="{% url 'home' %}">
-                        <img src="{% static 'media/yoga-vibe-logo.png' %}" alt="YogaVibe logo"
-                            class="logo-image-sm d-md-none main-logo-link">
+                        <img src="{% static 'media/yoga-vibe-logo.png' %}" alt="YogaVibe logo" class="logo-image">
                     </a>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-end">
-                    <!-- Move "My Account" and shopping bag icon to the right -->
+                    <!-- My Account -->
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
