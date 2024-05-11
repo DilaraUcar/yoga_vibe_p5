@@ -32,7 +32,7 @@ class Product(models.Model):
     stock_quantity = models.PositiveIntegerField(default=10)
     rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(upload_to='product_images/', default="product_images/noimage.png", null=True, blank=True)
+    image = models.ImageField(upload_to='product_imgs/', default="product_imgs/noimage.png", null=True, blank=True)
     video = models.FileField(upload_to='product_videos/', null=True, blank=True)  # For uploading video files
 
 
