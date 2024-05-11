@@ -56,6 +56,25 @@ body {
     border: 1px solid black !important;
 }
 
+.custom-nav {
+    background-color: rgba(241, 241, 249, 0.6);
+}
+
+.bg-custom {
+    background-color: #F1F1F9;
+}
+
+.custom-hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-toggler {
+    padding: 5px;
+    background-color: rgba(241, 241, 249, 0.8);
+}
+
+
 /* -------------------------------- Home page app */
 .logo-image {
     width: 200px;

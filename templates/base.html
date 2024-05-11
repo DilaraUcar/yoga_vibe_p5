@@ -19,9 +19,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -35,7 +36,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{%static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{%static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{%static 'favicon/site.webmanifest' %}">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
@@ -55,9 +56,14 @@
 
 <body>
     <header class="container-fluid fixed-top">
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-custom text-dark">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
+            </div>
+        </div>
         <!-- Navigation -->
-        <div class="row pt-lg-2 d-none d-lg-flex">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="row d-none d-lg-flex">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 custom-nav">
                 <div class="col-lg-4 d-flex justify-content-start">
                     <form class="w-100" method="GET" action="">
                         <div class="input-group">
@@ -111,6 +117,16 @@
                         </li>
                     </ul>
                 </div>
+            </nav>
+        </div>
+        <div class="row custom-nav justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
             </nav>
         </div>
     </header>
