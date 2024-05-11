@@ -56,12 +56,18 @@ body {
     border: 1px solid black !important;
 }
 
+/* -------------------------------- Home page app */
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
 .custom-nav {
     background-color: rgba(241, 241, 249, 0.6);
 }
 
 .bg-custom {
-    background-color: #F1F1F9;
+    background-color: #000;
 }
 
 .custom-hr {
@@ -74,13 +80,24 @@ body {
     background-color: rgba(241, 241, 249, 0.8);
 }
 
-
-/* -------------------------------- Home page app */
-.logo-image {
-    width: 200px;
-    height: auto;
+.my-1-custom-band {
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
+/* Custom CSS for hover dropdown */
+.hover-dropdown {
+    display: none; /* Initially hide dropdown */
+}
+
+.navbar-nav .nav-item:hover .hover-dropdown {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Optional: Adjust dropdown position */
+.dropdown-menu {
+    margin-top: 0;
+}
 
 /* -------------------------------- Media Queries */
 
