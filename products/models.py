@@ -6,6 +6,9 @@ class Category(models.Model):
     Represents a category for grouping products.
     """
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -26,10 +29,12 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    stock_quantity = models.PositiveIntegerField(default=0)
+    stock_quantity = models.PositiveIntegerField(default=10)
     rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(default="product_images/noimage.png", null=True, blank=True)
+    image = models.ImageField(upload_to='product_images/', default="product_images/noimage.png", null=True, blank=True)
+    video = models.FileField(upload_to='product_videos/', null=True, blank=True)  # For uploading video files
+
 
     def __str__(self):
         return self.name
