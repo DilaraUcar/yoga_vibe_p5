@@ -1,20 +1,21 @@
 from django.contrib import admin
 from .models import Product, Category
+from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
-
-class ProductAdmin(admin.ModelAdmin):
+@admin.register(Product)
+class ProductAdmin(SummernoteModelAdmin):
     list_display = (
-        'sku',
         'name',
+        'sku',
         'category',
         'price',
         'rating',
         'image',
         'description',
     )
-
+    search_fields = ['name']  # Change 'title' to 'name' if 'name' is the field you want to search
     ordering = ('sku',)
+    summernote_fields = ('description',)  # Use 'description' here
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
@@ -22,5 +23,4 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
