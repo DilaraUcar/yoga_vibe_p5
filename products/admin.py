@@ -15,9 +15,9 @@ class ProductAdmin(SummernoteModelAdmin):
         'image3',
         'description',
     )
-    search_fields = ['name', 'description']  # Change 'title' to 'name' if 'name' is the field you want to search
+    search_fields = ['name', 'description', 'sku'] 
     ordering = ('sku',)
-    summernote_fields = ('description',)  # Use 'description' here
+    summernote_fields = ('description',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (

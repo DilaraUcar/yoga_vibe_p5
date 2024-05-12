@@ -33,7 +33,9 @@ class Product(models.Model):
     image1 = models.ImageField(upload_to='product_imgs/', default='product_imgs/noimage.png', null=True, blank=True)
     image2 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
     image3 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
-    # Add more image fields as needed...
+    colors = models.CharField(max_length=100, blank=True, null=True, help_text="Enter comma-separated colors")  # Field for color options
+    video = models.FileField(upload_to='product_videos/', null=True, blank=True)  # For uploading video files
+
 
     def __str__(self):
         return self.name
@@ -44,3 +46,11 @@ class Product(models.Model):
             self.image1 = 'product_imgs/noimage.png'
 
         super().save(*args, **kwargs)
+
+    def get_color_choices(self):
+        """
+        Returns a list of color choices for the product.
+        """
+        if self.colors:
+            return [color.strip() for color in self.colors.split(',')]
+        return []

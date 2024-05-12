@@ -7,7 +7,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="yoga-mats-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=yoga_mats" id="yoga-mats-link">
                 Yoga Mats
             </a>
         </li>
@@ -19,11 +19,10 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">SHOP ALL WOMEN'S</a>
+                <a href="{% url 'products' %}?category=sets,tops_bras" class="dropdown-item">SHOP ALL WOMEN'S</a>
                 <hr class="custom-hr">
-                <a href="" class="dropdown-item">Sets</a>
-                <a href="" class="dropdown-item">Tops & Bra's</a>
-                <a href="" class="dropdown-item">Shorts & Leggins</a>
+                <a href="{% url 'products' %}?category=sets" class="dropdown-item">Sets</a>
+                <a href="{% url 'products' %}?category=tops_bras" class="dropdown-item">Tops & Bra's</a>
             </div>
         </li>
 
@@ -33,12 +32,10 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">SHOP ALL ACCESSORIES</a>
+                <a href="{% url 'products' %}?category=bags,water_bottles" class="dropdown-item">SHOP ALL ACCESSORIES</a>
                 <hr class="custom-hr">
-                <a href="" class="dropdown-item">Yoga Bags</a>
-                <a href="" class="dropdown-item">Water Bottles</a>
-                <a href="" class="dropdown-item">Yoga Shoes</a>
-                <a href="" class="dropdown-item">Headwear</a>
+                <a href="{% url 'products' %}?category=bags" class="dropdown-item">Yoga Bags</a>
+                <a href="{% url 'products' %}?category=water_bottles" class="dropdown-item">Water Bottles</a>
             </div>
         </li>
 
@@ -48,12 +45,10 @@
                 Home & Wellness
             </a>
             <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="home-wellness-link">
-                <a href="" class="dropdown-item">SHOP ALL HOME & WELLNESS</a>
+                <a href="{% url 'products' %}?category=crystals,home_decour" class="dropdown-item">SHOP ALL HOME & WELLNESS</a>
                 <hr class="custom-hr">
-                <a href="" class="dropdown-item">Crystals</a>
-                <a href="" class="dropdown-item">Yoga Books</a>
-                <a href="" class="dropdown-item">Aromas</a>
-                <a href="" class="dropdown-item">Home Decour</a>
+                <a href="{% url 'products' %}?category=crystals" class="dropdown-item">Crystals</a>
+                <a href="{% url 'products' %}?category=home_decour" class="dropdown-item">Home Decour</a>
             </div>
         </li>
 
