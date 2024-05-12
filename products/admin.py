@@ -13,7 +13,7 @@ class ProductAdmin(SummernoteModelAdmin):
         'image',
         'description',
     )
-    search_fields = ['name']  # Change 'title' to 'name' if 'name' is the field you want to search
+    search_fields = ['name', 'description']  # Change 'title' to 'name' if 'name' is the field you want to search
     ordering = ('sku',)
     summernote_fields = ('description',)  # Use 'description' here
 
