@@ -10,7 +10,9 @@ class ProductAdmin(SummernoteModelAdmin):
         'category',
         'price',
         'rating',
-        'image',
+        'image1',
+        'image2',
+        'image3',
         'description',
     )
     search_fields = ['name', 'description']  # Change 'title' to 'name' if 'name' is the field you want to search

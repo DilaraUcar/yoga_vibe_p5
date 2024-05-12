@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Category(models.Model):
     """
     Represents a category for grouping products.
@@ -31,10 +30,17 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock_quantity = models.PositiveIntegerField(default=10)
     rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(upload_to='product_imgs/', default="product_imgs/noimage.png", null=True, blank=True)
-    video = models.FileField(upload_to='product_videos/', null=True, blank=True)  # For uploading video files
-
+    image1 = models.ImageField(upload_to='product_imgs/', default='product_imgs/noimage.png', null=True, blank=True)
+    image2 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
+    image3 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
+    # Add more image fields as needed...
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        # Check if any of the image fields are empty
+        if not self.image1 and not self.image2 and not self.image3:
+            self.image1 = 'product_imgs/noimage.png'
+
+        super().save(*args, **kwargs)

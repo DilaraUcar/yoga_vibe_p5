@@ -109,6 +109,12 @@ body {
 	z-index: -1;
 }
 
+/* Ensuring consistent product img size to maintain visual coherence */
+.card-img-top { 
+    height: 350px; 
+    object-fit: cover; /* Ensures the image covers the entire container */
+}
+
 
 /* -------------------------------- Media Queries */
 
