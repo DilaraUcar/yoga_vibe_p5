@@ -56,6 +56,11 @@ body {
     border: 1px solid black !important;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* -------------------------------- Home page app & general styling across site*/
 .logo-image {
     width: 200px;
