@@ -56,7 +56,7 @@ body {
     border: 1px solid black !important;
 }
 
-/* -------------------------------- Home page app */
+/* -------------------------------- Home page app & general styling across site*/
 .logo-image {
     width: 200px;
     height: auto;
@@ -113,6 +113,13 @@ body {
 .card-img-top { 
     height: 350px; 
     object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+/* ------------------------------------------------------------ Shopping Bag */
+
+.custom-bag-img {
+    height: 200px;
+    width: 200px;
 }
 
 
