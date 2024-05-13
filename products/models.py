@@ -30,6 +30,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock_quantity = models.PositiveIntegerField(default=10)
     rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     image1 = models.ImageField(upload_to='product_imgs/', default='product_imgs/noimage.png', null=True, blank=True)
     image2 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
     image3 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)

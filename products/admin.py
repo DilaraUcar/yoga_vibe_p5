@@ -13,11 +13,11 @@ class ProductAdmin(SummernoteModelAdmin):
         'image1',
         'image2',
         'image3',
-        'description',
     )
-    search_fields = ['name', 'description', 'sku'] 
+    search_fields = ['sku', 'name', 'description',] 
     ordering = ('sku',)
     summernote_fields = ('description',)
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
