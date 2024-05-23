@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-qfqv2=9wcc+6+9v*sb55@!j56wx4ci381#yoky8rt=dvut^r_!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io'
+]
 
 
 # Application definition
@@ -47,6 +51,9 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -57,9 +64,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'yoga_vibe.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -75,7 +87,12 @@ TEMPLATES = [
                 'django.template.context_processors.request', #required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
+            ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
