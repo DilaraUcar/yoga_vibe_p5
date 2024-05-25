@@ -8,7 +8,6 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Figtree', sans-serif;
-    min-height: 100vh;
 
 }
 
@@ -69,8 +68,10 @@ body {
     cursor: pointer;
 }
 
-..btn-outline-black {
-
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
 }
 
 /* -------------------------------- Home page app & general styling across site*/
@@ -81,6 +82,7 @@ body {
 
 .custom-nav {
     background-color: rgba(241, 241, 249, 0.6);
+    padding-bottom: 0;
 }
 
 .bg-custom {
@@ -202,7 +204,7 @@ body {
 }
 
 .bag-notification-wrapper {
-    height: 300px;
+    height: 200px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -211,14 +213,65 @@ body {
 .custom-overlay {
     border-radius: 20px;
     box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 35px;
     margin-top: 40px;
-    max-width: fit-content; /* Adjust the value as needed */
+    max-width: 500px; /* Adjust the value as needed */
     margin-left: auto;
     margin-right: auto;
 }
 
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+}
+
+.allauth-form-inner-content input {
+    border-radius: 0;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+    color: #5f5e5e;/* text-info */
+    font-weight: bold;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -253,4 +306,11 @@ body {
     body {
         height: calc(100vh - 116px);
     }
+}
+
+/* Margin at top to push forms down on mobile */
+@media (max-width: 425px) {
+   .custom-overlay {
+    margin-top: 100px;
+   }
 }
