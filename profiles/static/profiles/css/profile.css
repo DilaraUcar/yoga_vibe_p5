@@ -10,6 +10,16 @@
     max-width: 900px; /* Adjust the value as needed */
 }
 
+.order-history {
+    max-height: 416px; /* height of profile form + submit button */
+    overflow-y: auto;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+    font-weight: 500;
+}
+
 /* Margin at top to push forms down on mobile */
 @media (max-width: 425px) {
     .custom-overlay-profile-form {
