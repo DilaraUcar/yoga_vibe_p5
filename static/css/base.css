@@ -7,7 +7,15 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Figtree';
+    font-family: 'Figtree', sans-serif;
+    min-height: 100vh;
+
+}
+
+/* Hero image text shadow for improved readability */
+.custom-text {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+    font-weight: 500;
 }
 
 /* from Bulma */
@@ -64,8 +72,6 @@ body {
 ..btn-outline-black {
 
 }
-
-
 
 /* -------------------------------- Home page app & general styling across site*/
 .logo-image {
@@ -199,6 +205,18 @@ body {
     height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* -------------------------------- Allauth templates customization */
+.custom-overlay {
+    border-radius: 20px;
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px 35px;
+    margin-top: 40px;
+    max-width: fit-content; /* Adjust the value as needed */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
