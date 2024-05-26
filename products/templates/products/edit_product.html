@@ -10,12 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="container custom-product-form">
+<div class="container custom-product-form text-black">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <hr>
             <h2 class="logo-font mb-4">Product Management</h2>
-            <h5 class="text-muted">Edit a Product</h5>
+            <h5 class="text-black logo-font text-center">Edit a Product</h5>
             <hr>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div class="text-right">
+                <div class="text-center">
                     <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-black rounded-0" type="submit">Update Product</button>
                 </div>

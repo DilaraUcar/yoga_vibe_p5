@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
+
 from pathlib import Path
 
 if os.path.isfile('env.py'):
@@ -29,7 +31,7 @@ SECRET_KEY = 'django-insecure-qfqv2=9wcc+6+9v*sb55@!j56wx4ci381#yoky8rt=dvut^r_!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['yoga-vibe.herokuapp.com', 'localhost', '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io'
@@ -130,12 +132,16 @@ WSGI_APPLICATION = 'yoga_vibe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
 
 
 # Password validation
