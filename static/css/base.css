@@ -272,6 +272,15 @@ body {
     font-weight: bold;
 }
 
+/* -------------------------------- Add products form */
+.custom-add-product-form {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 35px;
+    margin-top: 40px;
+    max-width: 720px !important; /* Adjust the value as needed */
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -312,5 +321,12 @@ body {
    .custom-overlay {
     margin-top: 100px;
    }
+
+   .custom-add-product-form {
+    margin-top: 100px;
+    width: min-content;
+   }
 }
+
+
 

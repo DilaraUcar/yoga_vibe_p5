@@ -7,7 +7,7 @@
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 35px;
     margin-top: 40px;
-    max-width: 900px; /* Adjust the value as needed */
+    max-width: 750px !important; /* Adjust the value as needed */
 }
 
 .order-history {
@@ -24,6 +24,7 @@
 @media (max-width: 425px) {
     .custom-overlay-profile-form {
      margin-top: 100px;
+     width: min-content;
     }
  }
  

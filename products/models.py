@@ -34,9 +34,6 @@ class Product(models.Model):
     image1 = models.ImageField(upload_to='product_imgs/', default='product_imgs/noimage.png', null=True, blank=True)
     image2 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
     image3 = models.ImageField(upload_to='product_imgs/', null=True, blank=True)
-    colors = models.CharField(max_length=100, blank=True, null=True, help_text="Enter comma-separated colors")  # Field for color options
-    video = models.FileField(upload_to='product_videos/', null=True, blank=True)  # For uploading video files
-
 
     def __str__(self):
         return self.name
