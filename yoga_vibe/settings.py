@@ -26,12 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qfqv2=9wcc+6+9v*sb55@!j56wx4ci381#yoky8rt=dvut^r_!'
-
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['yoga-vibe.herokuapp.com', 'localhost', '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['yoga-vibe-pp5-herokuapp.com', 'localhost', '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io'
