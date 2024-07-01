@@ -68,9 +68,14 @@ body {
     cursor: pointer;
 }
 
+.fa-trash-can:hover {
+    color: red;
+}
+
 .btn-outline-black {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
+    color: black !important;
+    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -81,7 +86,7 @@ body {
 }
 
 .custom-nav {
-    background-color: rgba(241, 241, 249, 0.6);
+    background-color: rgba(241, 241, 249, 0.8);
     padding-bottom: 0;
 }
 
@@ -99,6 +104,10 @@ body {
     background-color: rgba(241, 241, 249, 0.8);
 }
 
+.nav-link {
+    letter-spacing: 1.5px;
+}
+
 .my-1-custom-band {
     margin-bottom: 0;
     margin-top: 5px;
@@ -106,11 +115,13 @@ body {
 
 /* Custom CSS for hover dropdown */
 .hover-dropdown {
-    display: none; /* Initially hide dropdown */
+    display: none;
+    /* Initially hide dropdown */
 }
 
 .navbar-nav .nav-item:hover .hover-dropdown {
-    display: block; /* Display dropdown on hover */
+    display: block;
+    /* Display dropdown on hover */
 }
 
 /* Adjust dropdown position */
@@ -119,20 +130,28 @@ body {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 /* Ensuring consistent product img size to maintain visual coherence */
-.card-img-top { 
-    height: 350px; 
-    object-fit: cover; /* Ensures the image covers the entire container */
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+    /* Ensures the image covers the entire container */
 }
+
+/* ------------------------------------------------------------ Product Page */
+
+.mobile-product-m {
+    margin-top: 2rem;
+}
+
 
 /* ------------------------------------------------------------ Shopping Bag */
 
@@ -160,10 +179,10 @@ body {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
@@ -215,13 +234,15 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 35px;
     margin-top: 40px;
-    max-width: 500px; /* Adjust the value as needed */
+    max-width: 500px;
+    /* Adjust the value as needed */
     margin-left: auto;
     margin-right: auto;
 }
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
+    margin-top: 1.5rem;
+    /* mt-4 */
 }
 
 .allauth-form-inner-content input {
@@ -239,8 +260,8 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -257,18 +278,19 @@ body {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-    color: #5f5e5e;/* text-info */
+    color: #5f5e5e;
+    /* text-info */
     font-weight: bold;
 }
 
@@ -278,7 +300,8 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 35px;
     margin-top: 40px;
-    max-width: 720px !important; /* Adjust the value as needed */
+    max-width: 720px !important;
+    /* Adjust the value as needed */
 }
 
 /* -------------------------------- Media Queries */
@@ -314,19 +337,102 @@ body {
     body {
         height: calc(100vh - 116px);
     }
+
+    .display-4.logo-font.text-black {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 5px 10px 0px 10px;
+    }
+
+    .nav-item {
+        padding-left: 10px;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    #delivery-banner h4 {
+        font-size: .9rem;
+    }
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
+
+    .increment-qty,
+    .decrement-qty {
+        padding: .25rem .5rem !important;
+    }
+
+
 }
 
 /* Margin at top to push forms down on mobile */
 @media (max-width: 425px) {
-   .custom-overlay {
-    margin-top: 100px;
-   }
+    .custom-overlay {
+        margin-top: 60px;
+    }
 
-   .custom-product-form {
-    margin-top: 100px;
-    width: min-content;
-   }
+    .custom-product-form {
+        margin-top: 100px;
+        width: min-content;
+    }
+
+    /* Styling for bag page on mobile screens*/
+    .custom-bag-img {
+        width: 100px;
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .mobile-name-size {
+        font-size: 13px;
+    }
+
+    .mobile-product-size {
+        font-size: 13px;
+        font-weight: 200;
+    }
+
+    .mobile-sku-size {
+        font-size: 10px;
+        font-weight: 100;
+    }
 }
 
+/* CSS for small screens (less than 320px) */
+@media (max-width: 320px) {
+    .quantity-control-container {
+        display: block; /* Ensure it stacks vertically */
+    }
+    .quantity-control-container .form-group {
+        border-top: 1px solid #dee2e6; /* Optional: Add a border between items */
+        padding-top: 10px; /* Optional: Add padding for spacing */
+    }
+    .spacer-row {
+        display: none; /* Hide spacer row on small screens */
+    }
+}
 
+/* CSS for small screens (less than 320px) */
+@media (max-width: 375px) {
+    .form-group {
+        width: 100px;
+    }
 
+}
