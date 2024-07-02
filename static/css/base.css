@@ -152,6 +152,25 @@ body {
     margin-top: 2rem;
 }
 
+.favorite-btn {
+    background: none;
+    border: none;
+}
+
+.favorite-btn i {
+    font-size: 24px; /* Size of the heart icon */
+}
+
+#product-name {
+    font-size: large;
+    font-weight: 700;
+    color: #000;
+}
+
+.custom-heart {
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+    border-radius: 3px;
+}
 
 /* ------------------------------------------------------------ Shopping Bag */
 

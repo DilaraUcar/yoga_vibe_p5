@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Product, Category
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     list_display = (
@@ -25,4 +26,4 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, CategoryAdmin,)

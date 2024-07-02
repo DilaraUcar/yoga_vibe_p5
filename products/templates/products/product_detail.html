@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static account %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -54,7 +54,28 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <p class="mb-0 text-uppercase" id="product-name">{{ product.name }}</p>
+                    </div>
+                    <div class="col-4 text-right">
+                        <form action="{% url 'add_to_favorites' product.id %}" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="favorite-btn">
+                                {% if user.is_authenticated %}
+                                {% if is_favorite %}
+                                <i class="fa-solid fa-heart"></i>
+                                {% else %}
+                                <i class="fa-regular fa-heart"></i>
+                                {% endif %}
+                                {% else %}
+                                <i class="fa-regular fa-heart"></i>
+                                {% endif %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>

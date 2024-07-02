@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category
+from django.urls import reverse
+from .models import Product, Category, Favorite
 from .forms import ProductForm
 
 # Create your views here.
@@ -41,9 +42,14 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    is_favorite = False
+    if request.user.is_authenticated:
+        is_favorite = Favorite.objects.filter(user=request.user, product=product).exists()
+
 
     context = {
         'product': product,
+        'is_favorite': is_favorite,
         }
 
     return render(request, 'products/product_detail.html', context)
@@ -116,3 +122,27 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def add_to_favorites(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.user.is_authenticated:
+        favorite, created = Favorite.objects.get_or_create(user=request.user, product=product)
+        if created:
+            messages.success(request, 'Product added to favorites successfully.')
+        else:
+            favorite.delete()
+            messages.success(request, 'Product removed from favorites.')
+
+        return redirect(reverse('product_detail', args=[product_id]))
+
+    else:
+        messages.warning(request, 'Please login to add to favorites.')
+        return redirect(reverse('product_detail', args=[product_id]))
+
+
+@login_required
+def favorite_list(request):
+    favorites = Favorite.objects.filter(user=request.user)
+    return render(request, 'favorites.html', {'favorites': favorites})
