@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static account %}
+{% load star_rating %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -15,7 +16,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="carouselExample" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         {% if product.image1 %}
                         <div class="carousel-item active">
@@ -143,8 +144,55 @@
                         {% endwith %}
                     </div>
                 </form>
-
             </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3 class="text-center text-uppercase">Reviews {% if reviews.count > 0 %}({{ reviews.count }}){% endif %}
+            </h3>
+            {% if user.is_authenticated %}
+            <div class="text-center text-md-end">
+                <button class="btn mt-4 btn text-uppercase btn-black rounded-0" type="button" data-toggle="collapse"
+                    data-target="#reviewForm" aria-expanded="false" aria-controls="reviewForm">
+                    Write a Review
+                </button>
+            </div>
+
+            <div class="collapse mt-4" id="reviewForm">
+                <div class="card card-body">
+                    <form method="post" action="{% url 'product_detail' product.id %}">
+                        {% csrf_token %}
+                        {{ review_form.as_p }}
+                        <button type="submit" class="btn text-uppercase btn-black rounded-0">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <p class="mt-4">Please <a href="{% url 'account_login' %}">log in</a> to add a review.</p>
+            {% endif %}
+        </div>
+        <div class="col-12 mt-4">
+            <div id="reviews-container">
+                {% for review in reviews %}
+                <div class="mb-3 review {% if forloop.counter > 4 %}d-none{% endif %}">
+                    <div class="card-body ps-5">
+                        <h5 class="card-title">{{ review.user.username }}</h5>
+                        <p class="card-text">{% star_rating review.rating %}</p>
+                        <p id="review-title">{{ review.title }}</p>
+                        <p class="card-text">{{ review.comment }}</p>
+                        <p class="card-text"><small class="text-muted">{{ review.created_at }}</small></p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center text-md-end">No reviews yet.</p>
+                {% endfor %}
+            </div>
+            {% if reviews.count > 4 %}
+            <div class="text-center">
+                <button id="show-more-reviews" class="btn text-uppercase btn-black rounded-0">Show More</button>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -153,4 +201,21 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const showMoreButton = document.getElementById('show-more-reviews');
+        let visibleReviews = 4;
+
+        showMoreButton.addEventListener('click', function () {
+            const hiddenReviews = document.querySelectorAll('.review.d-none');
+            for (let i = 0; i < 4 && i < hiddenReviews.length; i++) {
+                hiddenReviews[i].classList.remove('d-none');
+            }
+            visibleReviews += 4;
+            if (visibleReviews >= document.querySelectorAll('.review').length) {
+                showMoreButton.classList.add('d-none');
+            }
+        });
+    });
+</script>
 {% endblock %}

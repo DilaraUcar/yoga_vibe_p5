@@ -3,7 +3,7 @@ html {
     position: relative;
 }
 
-body {
+.custom-bg-img {
     background: url('/media/hero.jpeg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
@@ -16,11 +16,11 @@ body {
 
 /* Ensure main content pushes footer down when there's enough content */
 main {
-    min-height: calc(100vh - 164px); /* Adjust 164px based on your header/footer height */
     padding-bottom: 60px; /* Same height as footer to prevent content overlap */
 }
 
-.footer {
+footer {
+    bottom: 0;
     width: 100%;
     height: 60px;
 }
@@ -211,6 +211,16 @@ a {
     border-radius: 3px;
 }
 
+.card-body {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    width: auto;
+}
+
+#review-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 /* ------------------------------------------------------------ Shopping Bag */
 
 .custom-bag-img {
@@ -360,6 +370,12 @@ a {
     margin-top: 40px;
     max-width: 720px !important;
     /* Adjust the value as needed */
+}
+
+/* ------------------------------------------------------------ Shopping Bag */
+
+.custom-favorites-mt {
+    margin-top: 15rem !important;
 }
 
 /* -------------------------------- Media Queries */

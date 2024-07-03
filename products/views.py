@@ -3,8 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.urls import reverse
-from .models import Product, Category, Favorite
-from .forms import ProductForm
+from .models import Product, Category, Favorite, Review
+from .forms import ProductForm, ReviewForm
+
 
 # Create your views here.
 def all_products(request):
@@ -39,20 +40,39 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
-
+    """ A view to show individual product details and handle reviews """
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
     is_favorite = False
+
     if request.user.is_authenticated:
         is_favorite = Favorite.objects.filter(user=request.user, product=product).exists()
 
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                review.save()
+                messages.success(request, 'Your review has been submitted!')
+                return redirect('product_detail', product_id=product.id)
+            else:
+                messages.error(request, 'There was an error with your review.')
+        else:
+            form = ReviewForm() 
+    else:
+        form = None
 
     context = {
         'product': product,
+        'reviews': reviews,
         'is_favorite': is_favorite,
-        }
+        'review_form': form,  # Pass review_form to context
+    }
 
     return render(request, 'products/product_detail.html', context)
+
 
 
 @login_required
@@ -170,3 +190,4 @@ def favorite_list(request):
         'favorites': favorites,
     }
     return render(request, 'products/favorites.html', context)
+

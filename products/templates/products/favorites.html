@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="mb-4">My Favorites</h2>
+<div class="container custom-favorites-mt">
+    <h2 class="mb-4 text-center text-uppercase">My Favorites</h2>
 
     {% if favorites %}
     <div class="row">
@@ -16,12 +16,12 @@
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">{{ favorite.product.name }}</h5>
-                    <p class="card-text">${{ favorite.product.price }}</p>
                     {% if favorite.product.rating %}
                     <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ favorite.product.rating }} / 5</small>
                     {% else %}
                     <small class="text-muted">No Rating</small>
                     {% endif %}
+                    <p class="card-text">${{ favorite.product.price }}</p>
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-right">
                     <form action="{% url 'remove_from_favorites' favorite.product.id %}" method="post" class="d-inline">
