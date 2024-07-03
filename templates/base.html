@@ -1,10 +1,9 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en">
+<html class="h-100" lang="en">
 
 <head>
-
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
@@ -15,9 +14,9 @@
     {% endblock %}
 
     {% block corecss %}
-     <!-- Bootstrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,13 +52,16 @@
     <title>YogaVibe {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body class="">
+<body class="d-flex flex-column h-100">
+
     <header class="container-fluid fixed-top">
+        <!-- Your header content -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-custom text-light">
                 <h4 class="logo-font my-1-custom-band">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
             </div>
         </div>
+
         <!-- Navigation -->
         <div class="row d-none d-lg-flex">
             <nav class="navbar navbar-expand-lg navbar-light w-100 custom-nav">
@@ -87,6 +89,17 @@
                 <div class="col-lg-4 d-flex justify-content-end">
                     <!-- My Account -->
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item dropdown">
+                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <a href="{% url 'favorite_list' %}">
+                                        <div><i class="fa-regular fa-heart"></i></div>
+                                        <p class="my-0">Favorites</p>
+                                    </a>
+                                </div>
+                            </a>
+                        </li>
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -129,6 +142,8 @@
                 </div>
             </nav>
         </div>
+
+        <!-- Mobile Navigation Toggle -->
         <div class="row custom-nav justify-content-center">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
@@ -162,36 +177,32 @@
     {% block page_header %}
     {% endblock %}
 
-    <main>
-        {% if user.is_authenticated %}
-        <p class="text-start m-3 mb-0 mt-0 text-muted">Hello {{ user }}!</p>
-        {% else %}
-        <p class="text-start m-3 mb-0 mt-0 text-muted">You are not logged in</p>
-        {% endif %}
+    <main class="flex-grow-1">
+        {% block content %}
+        {% endblock %}
     </main>
-
-    {% block content %}
-    {% endblock %}
 
     <!-- Footer -->
     <footer class="footer mt-auto">
-        <div class="row pt-2 px-4 d-flex justify-content-between footer-background">
-            <div id="socials" class="col-sm-6 d-flex nowrap justify-content-center justify-content-sm-start">
-                <a href="https://github.com/DilaraUcar?tab=repositories" target="_blank" class="footer-links"
-                    aria-label="Visit my GitHub in new tab">
-                    <i class="fab fa-github h2"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/dilara-ucar-1b847a19b/" target="_blank" class="footer-links"
-                    aria-label="Visit my LinkedIn in new tab">
-                    <i class="fab fa-linkedin h2"></i>
-                </a>
-            </div>
-            <div class="col-sm-6 text-nowrap text-center text-sm-end align-self-center">
-                <p class="text-dark mx-4">Made by Dilara Ucar </p>
-            </div>
-            <div class="col-sm-12 text-center align-self-center">
-                <hr>
-                <p class="text-dark">Copyright © QuestHub {% now 'Y' %}</p>
+        <div class="container-fluid">
+            <div class="row pt-2 px-4 d-flex justify-content-between footer-background">
+                <div id="socials" class="col-sm-6 d-flex nowrap justify-content-center justify-content-sm-start">
+                    <a href="https://github.com/DilaraUcar?tab=repositories" target="_blank" class="footer-links"
+                        aria-label="Visit my GitHub in new tab">
+                        <i class="fab fa-github h2"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dilara-ucar-1b847a19b/" target="_blank" class="footer-links"
+                        aria-label="Visit my LinkedIn in new tab">
+                        <i class="fab fa-linkedin h2"></i>
+                    </a>
+                </div>
+                <div id="development" class="col-sm-6 d-flex nowrap justify-content-center justify-content-sm-end">
+                    <p class="text-dark mx-4">Designed by Dilara Ucar</p>
+                </div>
+                <div id="company-name" class="col-sm-12 text-center align-self-center">
+                    <hr>
+                    <p class="text-dark">Copyright © QuestHub {% now 'Y' %}</p>
+                </div>
             </div>
         </div>
     </footer>

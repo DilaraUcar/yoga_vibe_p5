@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    position: relative;
 }
 
 body {
@@ -8,7 +9,20 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Figtree', sans-serif;
+    position: relative;
 
+
+}
+
+/* Ensure main content pushes footer down when there's enough content */
+main {
+    min-height: calc(100vh - 164px); /* Adjust 164px based on your header/footer height */
+    padding-bottom: 60px; /* Same height as footer to prevent content overlap */
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
 }
 
 /* Hero image text shadow for improved readability */
@@ -164,6 +178,10 @@ i:active {
     text-align: center;
     padding: 15px;
     list-style-type: none;
+}
+
+a {
+    color: #000;
 }
 
 

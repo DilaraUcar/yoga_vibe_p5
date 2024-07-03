@@ -142,7 +142,31 @@ def add_to_favorites(request, product_id):
         return redirect(reverse('product_detail', args=[product_id]))
 
 
+def remove_from_favorites(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.user.is_authenticated:
+        try:
+            favorite = Favorite.objects.get(user=request.user, product=product)
+            favorite.delete()
+            messages.success(request, 'Product removed from favorites successfully.')
+        except Favorite.DoesNotExist:
+            messages.error(request, 'Product is not in your favorites.')
+        except Exception as e:
+            messages.error(request, f'Error removing product from favorites: {str(e)}')
+
+        return redirect(reverse('favorite_list'))
+
+    else:
+        messages.warning(request, 'Please login to remove from favorites.')
+        return redirect(reverse('product_detail', args=[product_id]))
+
+
+
 @login_required
 def favorite_list(request):
     favorites = Favorite.objects.filter(user=request.user)
-    return render(request, 'favorites.html', {'favorites': favorites})
+    context = {
+        'favorites': favorites,
+    }
+    return render(request, 'products/favorites.html', context)
