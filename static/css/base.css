@@ -146,6 +146,27 @@ body {
     /* Ensures the image covers the entire container */
 }
 
+.footer-background {
+    background-color: rgba(241, 241, 249, 0.8);
+}
+
+#socials > a {
+    color: #000;
+}
+
+i:hover,
+i:focus,
+i:active {
+    color: #4c4c4c;
+}
+
+.footer-links {
+    text-align: center;
+    padding: 15px;
+    list-style-type: none;
+}
+
+
 /* ------------------------------------------------------------ Product Page */
 
 .mobile-product-m {
