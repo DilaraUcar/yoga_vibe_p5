@@ -31,10 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['yoga-vibe-pp5-63b402220300.herokuapp.com', 'localhost', '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['yoga-vibe-pp5-63b402220300.herokuapp.com', 'localhost', '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io', '8000-dilaraucar-yogavibep5-6vy7i1u4e0v.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io'
+    'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io',
+    'https://8000-dilaraucar-yogavibep5-6vy7i1u4e0v.ws.codeinstitute-ide.net'
 ]
 
 

@@ -15,7 +15,6 @@ import stripe
 import json
 
 
-# Create your views here.
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -136,13 +135,17 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    View that handle successful checkouts
+    View that handles successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+        except UserProfile.DoesNotExist:
+            profile = UserProfile.objects.create(user=request.user)
+
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
@@ -164,8 +167,8 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfull! \
-        Your order number is {order_number}. A order confirmation \
+    messages.success(request, f'Order successful! \
+        Your order number is {order_number}. An order confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
