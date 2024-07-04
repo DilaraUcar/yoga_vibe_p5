@@ -62,6 +62,9 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+    def get_first_name(self):
+        return self.full_name.split(' ')[0]
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')

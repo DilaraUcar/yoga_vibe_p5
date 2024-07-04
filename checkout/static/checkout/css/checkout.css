@@ -1,3 +1,5 @@
+/*------------------------------------------------ Checkout page*/
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -70,3 +72,28 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+/*------------------------------------------------ Checkout Success Page */
+
+.order-confirmation-bg {
+    background-color: rgba(178, 217, 194, 0.3);
+}
+
+.fw-semibold {
+    font-weight: 500;
+}
+
+.custom-img-fluid{
+    height: 280px;
+    width: 250px;
+}
+
+.z-index {
+    z-index: 99;
+}
+
+.custom-fw-bold {
+    font-size: large;
+    font-weight: 600;
+}
+

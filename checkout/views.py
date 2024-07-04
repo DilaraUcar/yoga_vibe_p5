@@ -124,6 +124,7 @@ def checkout(request):
             order_form = OrderForm()
 
     template = 'checkout/checkout.html'
+
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
@@ -167,9 +168,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successful! \
-        Your order number is {order_number}. An order confirmation \
-        email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -177,6 +175,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'order_date': order.date,  # Add order date to context
     }
 
     return render(request, template, context)

@@ -102,6 +102,7 @@ footer {
 .custom-nav {
     background-color: rgba(241, 241, 249, 0.8);
     padding-bottom: 0;
+    padding-top: 0;
 }
 
 .bg-custom {
@@ -125,6 +126,10 @@ footer {
 .my-1-custom-band {
     margin-bottom: 0;
     margin-top: 5px;
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Custom CSS for hover dropdown */
