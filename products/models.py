@@ -48,6 +48,14 @@ class Product(models.Model):
         super().save(*args, **kwargs)
 
 
+class ProductRecommendation(models.Model):
+    product = models.ForeignKey(Product, related_name='main_product', on_delete=models.CASCADE)
+    recommended_product = models.ForeignKey(Product, related_name='recommended_product', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.product.name} recommends {self.recommended_product.name}'
+
+
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

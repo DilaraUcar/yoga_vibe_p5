@@ -97,3 +97,27 @@ select option[value=""] {
     font-weight: 600;
 }
 
+.order-wrapper {
+    border: 1px solid #000;
+}
+
+.order-info-wrapper {
+    border: 1px solid #000;
+    height: 280px;
+}
+
+@media (max-width: 320px) {
+    .order-number-container {
+        white-space: normal; /* Ensures text wraps instead of overflowing */
+        word-wrap: break-word; /* Handles long words */
+        max-width: 100%; /* Ensures the container doesn't exceed its parent's width */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust margins or padding as needed */
+    .custom-img-fluid {
+        max-width: 100%; /* Ensure image doesn't overflow */
+        height: auto;
+    }
+}

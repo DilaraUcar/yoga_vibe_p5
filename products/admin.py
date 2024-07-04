@@ -34,4 +34,4 @@ class ReviewAdmin(admin.ModelAdmin):
     search_fields = ['user__username', 'product__name', 'comment']
 
 
-admin.site.register(Category, CategoryAdmin,)
+admin.site.register(Category, CategoryAdmin)

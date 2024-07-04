@@ -6,13 +6,26 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
-from products.models import Product
+from products.models import Product, ProductRecommendation
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
 
 import stripe
 import json
+
+
+def get_recommended_products(user_profile):
+    # Retrieve all orders associated with the user profile
+    orders = Order.objects.filter(user_profile=user_profile)
+
+    # Collect product IDs from all line items in those orders
+    ordered_product_ids = OrderLineItem.objects.filter(order__in=orders).values_list('product_id', flat=True)
+
+    # Get distinct products excluding those already ordered
+    recommended_products = Product.objects.exclude(id__in=ordered_product_ids).distinct()[:4]
+
+    return recommended_products
 
 
 @require_POST
@@ -151,6 +164,7 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
+
         # Save the user's info
         if save_info:
             profile_data = {
@@ -168,6 +182,8 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    # Get recommended products for display
+    recommended_products = get_recommended_products(order.user_profile)
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -175,7 +191,8 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
-        'order_date': order.date,  # Add order date to context
+        'order_date': order.date,
+        'recommended_products': recommended_products,
     }
 
     return render(request, template, context)
