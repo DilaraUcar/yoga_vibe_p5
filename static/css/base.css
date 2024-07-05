@@ -59,6 +59,10 @@ footer {
     color: white;
 }
 
+.btn {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.3);
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -189,6 +193,32 @@ a {
     color: #000;
 }
 
+/* ------------------------------------------------------------ Mailchimp */
+#mc_embed_signup {
+    background: transparent !important;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: min-content;
+    border: 0.1px solid;
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+#mc_embed_signup h2 {
+    margin: 0 !important;
+}
+
+.refferal_badge {
+    height: 1px !important;
+}
+
+#mc_embed_signup div.response {
+    margin: 0 !important;
+    padding: 0 0 1rem 0 !important;
+    font-weight: bold;
+    z-index: 1;
+    width: 80%;
+}
 
 /* ------------------------------------------------------------ Product Page */
 
@@ -522,4 +552,11 @@ a {
         width: 100px;
     }
 
+}
+
+/* Mailchimp form width for bigger screens */
+@media (min-width: 768px) {
+    #mc_embed_signup {
+        width: 500px !important;
+    }
 }
