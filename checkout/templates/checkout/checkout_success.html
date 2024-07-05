@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -60,7 +61,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-2 text-md-end text-center">
-                                    <p class="small mb-0">${{ item.product.price }}</p>
+                                    <p class="small mb-0">${{ item.product.price | intcomma }}</p>
                                 </div>
                             </div>
                             <hr>
@@ -98,7 +99,7 @@
                         <p class="fw-bold mb-0">Subtotal Price:</p>
                     </div>
                     <div class="col-md-2 text-md-end text-center">
-                        <p class="small mb-0">${{ order.order_total }}</p>
+                        <p class="small mb-0">${{ order.order_total | intcomma }}</p>
                     </div>
                 </div>
                 <div class="row align-items-center">
@@ -106,7 +107,7 @@
                         <p class="fw-bold mb-0">Delivery Price:</p>
                     </div>
                     <div class="col-md-2 text-md-end text-center">
-                        <p class="small mb-0">${{ order.delivery_cost }}</p>
+                        <p class="small mb-0">${{ order.delivery_cost | intcomma }}</p>
                     </div>
                 </div>
                 <hr>
@@ -115,7 +116,7 @@
                         <h4 class="fw-bold mb-0">Grand Total:</h4>
                     </div>
                     <div class="col-md-2 text-md-end text-center">
-                        <p class="small mb-0 text-danger custom-fw-bold">${{ order.grand_total }}</p>
+                        <p class="small mb-0 text-danger custom-fw-bold">${{ order.grand_total | intcomma }}</p>
                     </div>
                 </div>
                 <br>
@@ -197,7 +198,7 @@
                             <img src="{{ recommended_product.image1.url }}" class="card-img-top" alt="{{ recommended_product.name }}">
                             <div class="pt-3">
                                 <h5 class="card-title">{{ recommended_product.name }}</h5>
-                                <p class="card-text">${{ recommended_product.price }}</p>
+                                <p class="card-text">${{ recommended_product.price | intcomma }}</p>
                                 <a href="{% url 'product_detail' recommended_product.id %}" class="btn rounded-0 btn-black">View Product</a>
                             </div>
                         </div>

@@ -226,6 +226,14 @@ a {
     font-weight: 600;
 }
 
+.recommended-product-img {
+    max-width: 100%; 
+    height: 300px; 
+    width: 100%; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+}
+
 /* ------------------------------------------------------------ Shopping Bag */
 
 .custom-bag-img {

@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.urls import reverse
-from .models import Product, Category, Favorite, Review
+from .models import Product, Category, Favorite, Review, ProductRecommendation
 from .forms import ProductForm, ReviewForm
 
 
@@ -44,6 +44,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product)
     is_favorite = False
+    recommended_products = Product.objects.filter(category=product.category).exclude(id=product_id)[:4]
 
     if request.user.is_authenticated:
         is_favorite = Favorite.objects.filter(user=request.user, product=product).exists()
@@ -69,6 +70,7 @@ def product_detail(request, product_id):
         'reviews': reviews,
         'is_favorite': is_favorite,
         'review_form': form,  # Pass review_form to context
+        'recommended_products': recommended_products,
     }
 
     return render(request, 'products/product_detail.html', context)

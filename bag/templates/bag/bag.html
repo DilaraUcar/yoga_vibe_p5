@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
+{% load humanize %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -42,7 +43,7 @@
                             <p class="my-0 small text-muted mobile-sku-size">SKU: {{ item.product.sku|upper }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price | intcomma }}</p>
                         </td>
                     </tr>
                     <tr>
@@ -83,9 +84,9 @@
                     {% endfor %}
                     <tr>
                         <td colspan="3" class="pt-5 text-end">
-                            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                            <h6><strong>Bag Total: ${{ total|floatformat:2 | intcomma }}</strong></h6>
+                            <h6>Delivery: ${{ delivery|floatformat:2 | intcomma }}</h6>
+                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 | intcomma }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-danger">
                                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong>

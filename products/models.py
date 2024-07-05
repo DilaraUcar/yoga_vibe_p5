@@ -69,7 +69,6 @@ class Favorite(models.Model):
         return f'{self.user.username} - {self.product.name}'
 
 
-
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
