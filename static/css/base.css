@@ -414,6 +414,11 @@ a {
     color: #42a9c0 !important;
 }
 
+/* --------------------------------  Forms */
+.form-group {
+    padding-bottom: 10px;
+}
+
 /* -------------------------------- Add products form */
 .custom-product-form {
     box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
@@ -435,7 +440,6 @@ a {
 #div_id_image3 {
     padding-top: 10px;
 }
-
 
 
 /* ------------------------------------------------------------ Shopping Bag */
@@ -584,7 +588,7 @@ a {
 /* CSS for small screens (less than 320px) */
 @media (max-width: 375px) {
     .form-group {
-        width: 100px;
+        width: 100%;
     }
 
 }
