@@ -104,7 +104,7 @@ footer {
 }
 
 .custom-nav {
-    background-color: rgba(241, 241, 249, 0.8);
+    background-color: rgba(241, 241, 249, 1);
     padding-bottom: 0;
     padding-top: 0;
 }
@@ -175,7 +175,7 @@ footer {
 }
 
 .footer-background {
-    background-color: rgba(241, 241, 249, 0.8);
+    background-color: rgba(241, 241, 249, 1);
 }
 
 #socials > a {
@@ -553,6 +553,11 @@ a {
         font-size: 10px;
         font-weight: 100;
     }
+
+    .message-container {
+        top: 150px;
+        right: 15px;
+    }
 }
 
 /* CSS for small screens (less than 320px) */
@@ -566,6 +571,13 @@ a {
     }
     .spacer-row {
         display: none; /* Hide spacer row on small screens */
+    }
+    .toast {
+        width: 90%;
+    }
+    .message-container {
+        right: 15px;
+        left: 50px;
     }
 }
 
@@ -649,7 +661,4 @@ a {
     }
 }
 
-/* Specific CSS for small screens */
-@media (max-width: 375px) {
-    
-}
+

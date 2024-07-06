@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col text-center mt-md-3 mobile-product-m">
             <h2 class="logo-font">Products</h2>
-            <hr class="w-50 mb-1">
+            <hr class="mb-1">
         </div>
     </div>
     <div class="row">
@@ -44,7 +44,7 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="card-body pb-0">
+                        <div class="pb-0">
                             <p class="mb-0 text-uppercase">{{ product.name }}</p>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
@@ -58,8 +58,8 @@
                                     {% endif %}
                                     {% if request.user.is_superuser %}
                                         <small class="ml-3">
-                                            <a href="{% url 'edit_product' product.id %}">Edit </a> |
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}"> Delete</a>
+                                            <a href="{% url 'edit_product' product.id %}" class="text-primary text-decoration-none">Edit </a> |
+                                            <a class="text-danger text-decoration-none" href="{% url 'delete_product' product.id %}"> Delete</a>
                                         </small>
                                     {% endif %}
                                 </div>

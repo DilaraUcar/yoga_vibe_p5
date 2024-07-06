@@ -61,9 +61,9 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity"
-                                            value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
-                                            id="id_qty_{{ item.item_id }}">
+                                        <input class="form-control form-control-sm qty_input" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="w-100 pt-2">
                                         <a class="update-link text-info text-uppercase"><small>Update</small></a>
-                                        <a class="remove-item float-right" id="remove_{{ item.item_id }}"
+                                        <a class="remove-item float-end" id="remove_{{ item.item_id }}"
                                             data-product_size="{{ item.size }}">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
@@ -89,7 +89,8 @@
                         <td colspan="3" class="pt-5 text-end">
                             <h6><strong>Bag Total: ${{ total|floatformat:2 | intcomma }}</strong></h6>
                             <h6>Delivery: ${{ delivery|floatformat:2 | intcomma }}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 | intcomma }}</strong></h4>
+                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 | intcomma }}</strong>
+                            </h4>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-danger">
                                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong>

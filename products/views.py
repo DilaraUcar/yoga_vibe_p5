@@ -190,6 +190,7 @@ def favorite_list(request):
     favorites = Favorite.objects.filter(user=request.user)
     context = {
         'favorites': favorites,
+        'on_favorite_page': True, 
     }
     return render(request, 'products/favorites.html', context)
 

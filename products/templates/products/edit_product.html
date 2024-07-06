@@ -3,14 +3,14 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="row justify-content-center">
+        <div class="col text-center"></div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<div class="container custom-product-form text-black">
+<div class="container custom-product-form text-black text-center">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <hr>
@@ -25,8 +25,8 @@
             <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2"
                 enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form | crispy }}
-                <div class="text-center">
+                {{ form|crispy }}
+                <div class="text-center pt-4">
                     <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-black rounded-0" type="submit">Update Product</button>
                 </div>
