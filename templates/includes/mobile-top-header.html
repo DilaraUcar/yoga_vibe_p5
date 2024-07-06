@@ -7,10 +7,9 @@
     </a>
 </li>
 
-
+<!-- Search -->
 <li class="list-inline-item">
-    <a class="nav-link text-black d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
+    <a class="nav-link text-black d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
             <p class="my-0">Search</p>
@@ -19,8 +18,7 @@
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
-                <input class="form-control border border-black rounded-0" type="text" name="q"
-                    placeholder="Search our site">
+                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
                     <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
                         <span class="icon">
@@ -32,9 +30,20 @@
         </form>
     </div>
 </li>
+
+<!-- Favorites -->
+<li class="list-inline-item">
+    <a href="{% url 'favorite_list' %}" class="nav-link text-black d-block d-lg-none text-decoration-none">
+        <div class="text-center">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <p class="my-0">Favorites</p>
+        </div>
+    </a>
+</li>
+
+<!-- My Account -->
 <li class="list-inline-item dropdown">
-    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
             <p class="my-0">My Account</p>
@@ -53,9 +62,10 @@
         {% endif %}
     </div>
 </li>
+
+<!-- Cart -->
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
-        href="{% url 'view_bag' %}">
+    <a class="{% if total_items_in_cart %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">

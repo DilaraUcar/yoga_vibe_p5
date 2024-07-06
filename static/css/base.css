@@ -169,6 +169,11 @@ footer {
     /* Ensures the image covers the entire container */
 }
 
+.text-auth-shadow {
+    text-shadow: 0.9px 0.7px #6e6e6e,
+    -1px -2px 3px #fff;
+}
+
 .footer-background {
     background-color: rgba(241, 241, 249, 0.8);
 }
@@ -405,6 +410,10 @@ a {
     font-weight: bold;
 }
 
+.text-info {
+    color: #42a9c0 !important;
+}
+
 /* -------------------------------- Add products form */
 .custom-product-form {
     box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
@@ -412,8 +421,22 @@ a {
     padding: 20px 35px;
     margin-top: 40px;
     max-width: 720px !important;
-    /* Adjust the value as needed */
 }
+
+#div_id_sku,
+#div_id_name,
+#div_id_description,
+#div_id_price,
+#div_id_stock_quantity,
+#div_id_rating,
+#div_id_has_sizes,
+#div_id_image1,
+#div_id_image2,
+#div_id_image3 {
+    padding-top: 10px;
+}
+
+
 
 /* ------------------------------------------------------------ Shopping Bag */
 
@@ -559,4 +582,74 @@ a {
     #mc_embed_signup {
         width: 500px !important;
     }
+
+    .pt-lg {
+        padding-top: 15px !important;
+    }
+}
+
+/* Ensure all icons and text are centered and aligned horizontally */
+@media (max-width: 375px) {
+    .list-inline-item {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .list-inline-item .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-inline-item .nav-link > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-inline-item i {
+        margin-bottom: 1rem; /* Optional: add space between icon and text */
+    }
+
+    .list-inline-item p {
+        margin: 0;
+        font-size: 0.75rem; /* Adjust font size as needed */
+    }
+
+    .text-auth-shadow {
+        padding-top: 115px !important;
+    }
+
+    /* css for add a product form small screens */
+    .custom-product-form {
+        width: 90%;
+        padding: 0 1rem;
+    }
+
+    #id_image1,
+    #id_image2,
+    #id_image3 {
+        width: 80%;
+    }
+
+    .custom-product-form .form {
+        width: 100%;
+    }
+
+    .custom-product-form .form .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-product-form .text-center {
+        flex-direction: column;
+        gap: 0.5rem; /* Adjust the spacing between buttons for small screens */
+    }
+}
+
+/* Specific CSS for small screens */
+@media (max-width: 375px) {
+    
 }

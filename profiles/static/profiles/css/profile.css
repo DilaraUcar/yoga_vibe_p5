@@ -20,6 +20,15 @@
     font-weight: 500;
 }
 
+input {
+
+}
+
+.form-group {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
 /* Margin at top to push forms down on mobile */
 @media (max-width: 425px) {
     .custom-overlay-profile-form {
@@ -34,4 +43,9 @@
     .custom-overlay-profile-form {
         max-width: fit-content;
     }
+
+    .pt-md-screens {
+        padding-top: 20px;
+    }
  }
+

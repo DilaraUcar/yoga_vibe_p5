@@ -68,51 +68,48 @@
         </div>
 
         <!-- Navigation -->
-        <div class="row d-none d-lg-flex">
-            <nav class="navbar navbar-expand-lg navbar-light w-100 custom-nav">
-                <div class="col-lg-4 d-flex justify-content-start">
-                    <form method="GET" action="{% url 'products' %}">
-                        <div class="input-group">
-                            <input class="form-control border border-black rounded-0 col-sm-6" type="text" name="q"
-                                placeholder="Search our site...">
-                            <div class="input-group-append">
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
+    <div class="row d-none d-lg-flex">
+        <nav class="navbar navbar-expand-lg navbar-light w-100 custom-nav">
+            <div class="col-lg-4 d-flex justify-content-start">
+                <form method="GET" action="{% url 'products' %}">
+                    <div class="input-group">
+                        <input class="form-control border border-black rounded-0 col-sm-6" type="text" name="q"
+                            placeholder="Search our site...">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
                         </div>
-                    </form>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                    <!-- Center the logo -->
-                    <a class="nav-link main-logo-link navbar-brand logo-btn" href="{% url 'home' %}">
-                        <img src="{% static 'media/yoga-vibe-logo.png' %}" alt="YogaVibe logo" class="logo-image">
-                    </a>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-end">
-                    <!-- My Account -->
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                        <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <a href="{% url 'favorite_list' %}">
-                                        <div><i class="fa-regular fa-heart"></i></div>
-                                        <p class="my-0">Favorites</p>
-                                    </a>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
-                                </div>
-                            </a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <!-- Center the logo -->
+                <a class="nav-link main-logo-link navbar-brand logo-btn" href="{% url 'home' %}">
+                    <img src="{% static 'media/yoga-vibe-logo.png' %}" alt="YogaVibe logo" class="logo-image">
+                </a>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-end">
+                <!-- My Account -->
+                <ul class="pt-2 list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item">
+                        <a href="{% url 'favorite_list' %}" class="nav-link text-black text-decoration-none">
+                            <div class="text-center">
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                                <p class="my-0">Favorites</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link text-black text-decoration-none" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <i class="fas fa-user fa-lg"></i>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
                             <!-- Dropdown menu content -->
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 <!-- Dropdown items -->
@@ -183,6 +180,11 @@
     {% endblock %}
 
     <main class="flex-grow-1">
+        {% if user.is_authenticated %}
+        <p class="pt-5 pt-lg text-black text-auth-shadow text-end m-3 mb-0 mt-0 text-muted">Hello {{ user }}!</p>
+        {% else %}
+        <p class="pt-5 pt-lg text-black text-auth-shadow text-end m-3 mb-0 mt-0 text-muted">You are not logged in</p>
+        {% endif %}
         {% block content %}
         {% endblock %}
     </main>

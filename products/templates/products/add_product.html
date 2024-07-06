@@ -11,21 +11,21 @@
 
 {% block content %}
 <div class="container custom-product-form text-black">
-    <div class="row justify-content-center"> <!-- Centering the entire content -->
-        <div class="col-12 col-md-8">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center">
             <hr>
             <h2 class="logo-font mb-4">Product Management</h2>
             <h5 class="logo-font text-center">Add a Product</h5>
             <hr>
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form | crispy }}
-                <div class="text-center">
+                {{ form|crispy }}
+                <div class="text-center pt-4 pb-3">
                     <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                     <button class="btn btn-black rounded-0" type="submit">Add Product</button>
                 </div>
             </form>
-        </div>            
+        </div>
     </div>
 </div>
 {% endblock %}
