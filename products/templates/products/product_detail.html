@@ -148,8 +148,8 @@
             </div>
         </div>
     </div>
-     <!-- Recommended Products Section -->
-     <div class="row mt-4">
+    <!-- Recommended Products Section -->
+    <div class="row mt-4">
         <div class="col-12">
             <h3 class="pb-3 text-center text-uppercase">Recommended Products</h3>
             <div class="row justify-content-center">
@@ -157,12 +157,14 @@
                 <div class="col-12 col-md-6 col-lg-3 mb-4 text-center">
                     <div class="h-100">
                         <a href="{% url 'product_detail' recommended_product.id %}">
-                            <img class="card-img-top recommended-product-img" src="{{ recommended_product.image1.url }}" alt="{{ recommended_product.name }}">
+                            <img class="card-img-top recommended-product-img" src="{{ recommended_product.image1.url }}"
+                                alt="{{ recommended_product.name }}">
                         </a>
                         <div class=" pt-3 card">
                             <h5 class="card-title">{{ recommended_product.name }}</h5>
                             <p class="card-text">${{ recommended_product.price }}</p>
-                            <a href="{% url 'product_detail' recommended_product.id %}" class="btn btn-black rounded-0">View Product</a>
+                            <a href="{% url 'product_detail' recommended_product.id %}"
+                                class="btn btn-black rounded-0">View Product</a>
                         </div>
                     </div>
                 </div>
@@ -229,18 +231,20 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const showMoreButton = document.getElementById('show-more-reviews');
-        let visibleReviews = 4;
+        if (showMoreButton) {
+            let visibleReviews = 4;
 
-        showMoreButton.addEventListener('click', function () {
-            const hiddenReviews = document.querySelectorAll('.review.d-none');
-            for (let i = 0; i < 4 && i < hiddenReviews.length; i++) {
-                hiddenReviews[i].classList.remove('d-none');
-            }
-            visibleReviews += 4;
-            if (visibleReviews >= document.querySelectorAll('.review').length) {
-                showMoreButton.classList.add('d-none');
-            }
-        });
+            showMoreButton.addEventListener('click', function () {
+                const hiddenReviews = document.querySelectorAll('.review.d-none');
+                for (let i = 0; i < 4 && i < hiddenReviews.length; i++) {
+                    hiddenReviews[i].classList.remove('d-none');
+                }
+                visibleReviews += 4;
+                if (visibleReviews >= document.querySelectorAll('.review').length) {
+                    showMoreButton.classList.add('d-none');
+                }
+            });
+        }
     });
 </script>
 {% endblock %}
