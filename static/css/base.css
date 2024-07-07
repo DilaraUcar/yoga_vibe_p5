@@ -109,6 +109,14 @@ footer {
     padding-top: 0;
 }
 
+.card-background-cover {
+    background: rgba(241, 241, 249, 0.5);
+    padding: 15px;
+    height: fit-content;
+    width: min-content;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
 .bg-custom {
     background-color: #000;
 }
