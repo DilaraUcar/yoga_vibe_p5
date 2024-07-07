@@ -113,7 +113,6 @@ footer {
     background: rgba(241, 241, 249, 0.5);
     padding: 15px;
     height: fit-content;
-    width: min-content;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -585,6 +584,10 @@ a {
     .message-container {
         top: 150px;
         right: 15px;
+    }
+
+    .card-background-cover {
+        width: min-content;
     }
 }
 
