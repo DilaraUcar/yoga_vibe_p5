@@ -114,20 +114,28 @@ This section provides insight into the UX process, with a focus on the people wh
 ---
 
 ## Agile Metodology
+When I started the project the user stories where written down in excel but noticed that using githubs projects where much eaasier to keep track of all the implementations and decided to use it.
 
-![Github user stories](docs/readme/user-stories.jpeg)
+I used GitHub projects to manage this project's development stages using Agile methodology. You can see my iterations and project board to learn more. After I added the user stories to github projects instead of using only the excel sheet I easily double checked that all the user stories that where priorities where finished and moved to 'Done'.
 
-### MoSCoW Prioritization
+ I added all the user stories to the Issues page and connected them to the project board. I kept iterations somewhat flexible. Each user story has a list of acceptance criteria and associated tasks, each one for easy tracking of progress.
+
+ During the making of the project i decided some of the user stories was not as important to focus on during the scope of time to finsih the project and decited not to do them. I also created an excel sheet to more easily update and rewrite user stories.
+
+![GitHub User Stories](docs/readme/user-stories.jpeg)
 
 ---
 
 ## Design
 
 ### Database Schema
+The database schema shows the structure of the database, the type and their relationship. This schema was done using [Lucid Chart](https://www.lucidchart.com/).
 
+![Database Schema](docs/readme/db-schema.jpeg)
 
 ### Colour Palette
 
+I decided to keep the color pallete very clean and stick with black and white.
 
 ### Typography
 
