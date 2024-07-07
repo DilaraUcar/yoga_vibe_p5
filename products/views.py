@@ -7,7 +7,6 @@ from .models import Product, Category, Favorite, Review, ProductRecommendation
 from .forms import ProductForm, ReviewForm
 
 
-# Create your views here.
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -25,9 +24,10 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -44,10 +44,19 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product)
     is_favorite = False
-    recommended_products = Product.objects.filter(category=product.category).exclude(id=product_id)[:4]
+    recommended_products = (
+        Product.objects
+        .filter(category=product.category)
+        .exclude(id=product_id)
+        [:4]
+    )
 
     if request.user.is_authenticated:
-        is_favorite = Favorite.objects.filter(user=request.user, product=product).exists()
+        is_favorite = (
+            Favorite.objects
+            .filter(user=request.user, product=product)
+            .exists()
+        )
 
         if request.method == 'POST':
             form = ReviewForm(request.POST)
@@ -61,7 +70,7 @@ def product_detail(request, product_id):
             else:
                 messages.error(request, 'There was an error with your review.')
         else:
-            form = ReviewForm() 
+            form = ReviewForm()
     else:
         form = None
 
@@ -69,12 +78,11 @@ def product_detail(request, product_id):
         'product': product,
         'reviews': reviews,
         'is_favorite': is_favorite,
-        'review_form': form,  # Pass review_form to context
+        'review_form': form,
         'recommended_products': recommended_products,
     }
 
     return render(request, 'products/product_detail.html', context)
-
 
 
 @login_required
@@ -91,10 +99,13 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -132,7 +143,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -150,9 +164,15 @@ def add_to_favorites(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
     if request.user.is_authenticated:
-        favorite, created = Favorite.objects.get_or_create(user=request.user, product=product)
+        favorite, created = Favorite.objects.get_or_create(
+            user=request.user,
+            product=product
+        )
         if created:
-            messages.success(request, 'Product added to favorites successfully.')
+            messages.success(
+                request,
+                'Product added to favorites successfully.'
+            )
         else:
             favorite.delete()
             messages.success(request, 'Product removed from favorites.')
@@ -171,11 +191,17 @@ def remove_from_favorites(request, product_id):
         try:
             favorite = Favorite.objects.get(user=request.user, product=product)
             favorite.delete()
-            messages.success(request, 'Product removed from favorites successfully.')
+            messages.success(
+                request,
+                'Product removed from favorites successfully.'
+            )
         except Favorite.DoesNotExist:
             messages.error(request, 'Product is not in your favorites.')
         except Exception as e:
-            messages.error(request, f'Error removing product from favorites: {str(e)}')
+            messages.error(
+                request,
+                f'Error removing product from favorites: {str(e)}'
+            )
 
         return redirect(reverse('favorite_list'))
 
@@ -184,13 +210,11 @@ def remove_from_favorites(request, product_id):
         return redirect(reverse('product_detail', args=[product_id]))
 
 
-
 @login_required
 def favorite_list(request):
     favorites = Favorite.objects.filter(user=request.user)
     context = {
         'favorites': favorites,
-        'on_favorite_page': True, 
+        'on_favorite_page': True,
     }
     return render(request, 'products/favorites.html', context)
-
