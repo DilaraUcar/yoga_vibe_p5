@@ -1,24 +1,22 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}" id="all-products-link">
+            <a class="logo-font fw-bold nav-link text-black me-3" href="{% url 'products' %}" id="all-products-link">
                 All Products
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=yoga_mats" id="yoga-mats-link">
+            <a class="logo-font fw-bold nav-link text-black me-3" href="{% url 'products' %}?category=yoga_mats" id="yoga-mats-link">
                 Yoga Mats
             </a>
         </li>
 
-
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font fw-bold nav-link text-black me-3" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clothing
             </a>
-            <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="clothing-link">
+            <div class="dropdown-menu custom-nav border-0 hover-dropdown" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?category=sets,tops_bras" class="dropdown-item">SHOP ALL WOMEN'S</a>
                 <hr class="custom-hr">
                 <a href="{% url 'products' %}?category=sets" class="dropdown-item">Sets</a>
@@ -27,11 +25,10 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessories-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font fw-bold nav-link text-black me-3" href="#" id="accessories-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
-            <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="accessories-link">
+            <div class="dropdown-menu custom-nav border-0 hover-dropdown" aria-labelledby="accessories-link">
                 <a href="{% url 'products' %}?category=bags,water_bottles" class="dropdown-item">SHOP ALL ACCESSORIES</a>
                 <hr class="custom-hr">
                 <a href="{% url 'products' %}?category=bags" class="dropdown-item">Yoga Bags</a>
@@ -40,23 +37,15 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="home-wellness-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font fw-bold nav-link text-black me-3 mb-2" href="#" id="home-wellness-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Home & Wellness
             </a>
-            <div class="dropdown-menu border-0 hover-dropdown" aria-labelledby="home-wellness-link">
+            <div class="dropdown-menu custom-nav border-0 hover-dropdown" aria-labelledby="home-wellness-link">
                 <a href="{% url 'products' %}?category=crystals,home_decour" class="dropdown-item">SHOP ALL HOME & WELLNESS</a>
                 <hr class="custom-hr">
                 <a href="{% url 'products' %}?category=crystals" class="dropdown-item">Crystals</a>
                 <a href="{% url 'products' %}?category=home_decour" class="dropdown-item">Home Decour</a>
             </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="sale-link">
-                Sale
-            </a>
-        </li>
         </li>
     </ul>
 </div>

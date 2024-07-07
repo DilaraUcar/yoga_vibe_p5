@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def bag_contents(request):
 
     bag_items = []
@@ -32,18 +33,14 @@ def bag_contents(request):
                     'size': size,
                 })
 
-
-    # Fix error in sum for total (have some integers and dictionaries) to handle these calculations
-    total_items_in_cart = 0 
+    total_items_in_cart = 0
     for item_id, quantity in bag.items():
         if isinstance(quantity, int):
             total_items_in_cart += quantity
         elif isinstance(quantity, dict) and 'items_by_size' in quantity:
             total_items_in_cart += sum(quantity['items_by_size'].values())
-        else: 
+        else:
             print("Unhandled data type in bag", type(quantity), quantity)
-
-
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -51,9 +48,9 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
-    
+
     context = {
         'bag_items': bag_items,
         'total': total,
@@ -63,7 +60,6 @@ def bag_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
         'total_items_in_cart': total_items_in_cart,
-       
     }
 
     return context

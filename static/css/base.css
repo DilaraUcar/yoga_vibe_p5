@@ -470,6 +470,22 @@ a {
     .header-container {
         padding-top: 164px;
     }
+
+    /* Vertical line between nav elements on desktop screens */
+    .navbar-nav .nav-item {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .navbar-nav .nav-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 7px; /* Adjust to control the spacing */
+        transform: translateY(-50%);
+        border-left: 1px solid #000; /* Adjust color and width as needed */
+        height: 20px; /* Adjust height as needed */
+    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -589,6 +605,10 @@ a {
 @media (max-width: 375px) {
     .form-group {
         width: 100%;
+    }
+
+    .input-group {
+        width: 100px;
     }
 
 }

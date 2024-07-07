@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -16,14 +17,17 @@ import json
 
 
 def get_recommended_products(user_profile):
-    # Retrieve all orders associated with the user profile
     orders = Order.objects.filter(user_profile=user_profile)
-
-    # Collect product IDs from all line items in those orders
-    ordered_product_ids = OrderLineItem.objects.filter(order__in=orders).values_list('product_id', flat=True)
-
-    # Get distinct products excluding those already ordered
-    recommended_products = Product.objects.exclude(id__in=ordered_product_ids).distinct()[:4]
+    ordered_product_ids = (
+        OrderLineItem.objects
+        .filter(order__in=orders)
+        .values_list('product_id', flat=True)
+        )
+    recommended_products = (
+        Product.objects
+        .exclude(id__in=ordered_product_ids)
+        .distinct()[:4]
+        )
 
     return recommended_products
 
@@ -91,21 +95,23 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in bag wasn't found in database."
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -160,12 +166,9 @@ def checkout_success(request, order_number):
         except UserProfile.DoesNotExist:
             profile = UserProfile.objects.create(user=request.user)
 
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_full_name': order.full_name,
@@ -182,7 +185,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    # Get recommended products for display
     recommended_products = get_recommended_products(order.user_profile)
 
     if 'bag' in request.session:
