@@ -333,15 +333,16 @@ Order confirmation page:
 ![Order confirmation part 1](docs/readme/web-order-confirmation-2.jpeg)
 ![Order confirmation part 1](docs/readme/web-order-confirmation-3.jpeg)
 
-
-
-
-
 ---
 
 ### Features Left to Implement
 
-Many ideas and features are lined up for this project, although they could not be implemented this time, in the future, I would like to:
+Features I'd like to implement in the future:
+
+- Add CRUD functionality to reviews.
+- Add sale and special offers.
+- Add a 'learning' app to show yoga tutorials for begginers and teach about yoga and different techniques.
+- Add a blog to discuss and learn about yoga.
 
 ---
 
