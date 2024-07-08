@@ -454,14 +454,14 @@ In order to deploy the project, Heroku needs information about the technologies 
 #### How to Fork
 
 1. Log in to GitHub.
-2. Go to the repository for this project, [DilaraUcar/django-portfolio-project](https://github.com/DilaraUcar/django-portfolio-project).
+2. Go to the repository for this project, [DilaraUcar/yoga_vibe_p5](https://github.com/DilaraUcar/yoga_vibe_p5).
 3. Click the Fork button in the top right corner.
 
 
 #### How to Clone
 
 1. Log in to GitHub.
-2. Go to the repository for this project, [DilaraUcar/django-portfolio-project](https://github.com/DilaraUcar/django-portfolio-project).
+2. Go to the repository for this project, [DilaraUcar/yoga_vibe_p5](https://github.com/DilaraUcar/yoga_vibe_p5).
 3. Click code button, select if you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3, then press enter.
@@ -482,6 +482,9 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 - [Stack overflow](https://stackoverflow.com/) helped me to troubleshoot many of the issues and bugs encountered.
 
 - I also researched using [W3 Schools](https://www.w3schools.com/) & [Django Documentation](https://docs.djangoproject.com/en/4.2/).
+
+- I used code from [DjangoProject.com](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/) for the reviews to display stars filled or not filled based on the rating a user gives.
+
 
 ### Content
 
