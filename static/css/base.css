@@ -10,8 +10,6 @@ html {
     color: #555;
     font-family: 'Figtree', sans-serif;
     position: relative;
-
-
 }
 
 /* Ensure main content pushes footer down when there's enough content */
@@ -274,6 +272,10 @@ a {
     width: 100%; 
     border: 1px solid #ddd; 
     border-radius: 5px; 
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+        display: none;
 }
 
 /* ------------------------------------------------------------ Shopping Bag */
