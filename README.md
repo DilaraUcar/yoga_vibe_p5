@@ -2,7 +2,7 @@
 
 ![Yogavibe mockup](docs/readme/mockup.jpeg)
 
-This website is designed for yoga enthusiasts of all levels, from beginners to experienced practitioners. 
+Welcome to our B2C e-commerce platform, dedicated to providing high-quality yoga products for enthusiasts of all levels. Whether you're a seasoned practitioner or just beginning your yoga journey, our online store offers a variety of products to support your practice.
 
 Visit the live site: [YogaVibe](https://yoga-vibe-pp5-63b402220300.herokuapp.com/)
 
@@ -59,7 +59,7 @@ This section provides insight into the UX process, with a focus on the people wh
 
 **Project goals:**
 
-- The aim of the project is to encourage both beginners and advanced yoga enthusiasts to buy yoga gear.
+- The aim of the project is to encourage both beginners and advanced yoga enthusiasts to buy yoga gear all in one website. The goal is to make it more efficient and easy for both new and advanced yogis to find all the gear they would need in their yoga journey.
 
 - To provide an easy and user-friendly web app where users can buy yoga gear and at the same time learn some more about yoga.
 
@@ -349,12 +349,19 @@ Features I'd like to implement in the future:
 ### Marketing Stategy
 
 #### Business model
+The business is a B2C e-commerce platform with the main goal of selling Yoga products that are displayed online on the website. The target audience is yoga lovers, both new and advanced, of all ages who are are interested in yoga in general. The payment type employed is: SINGLE PAYMENT The transaction is finished & order confirmation is created once a single payment is made. The available payment option is payment by card, which is implemented using Stripe.
+
 
 #### Social Media
 ##### Facebook
+YogaVibe has a company page on Facebook. The content of the post is to tell what the store has to offer and encourage a user to visit the store using a call to action.
+
+![Facebook page part 1](docs/readme/web-facebook-1.jpeg)
+![Facebook page part 2](docs/readme/web-facebook-2.jpeg) 
 
 #### Newsletter
 ##### Mailchimp
+Mailchimp is utilized to collect email addresses from users who wish to subscribe to our newsletters. Its primary purpose is for users to enter their email address and click the subscribe button. The newsletter content aims to inform subscribers about new offers, collections or new products added to the store, which are available on our website.
 
 ---
 ## Technologies Used
@@ -362,6 +369,41 @@ Features I'd like to implement in the future:
 The main technologies used are Python, Javascript, html, css & Django.
 
 ### Frameworks, Libraries & Programs Used
+
+[DJANGO](https://www.djangoproject.com/) - The main web framework, used for database handling and templates.
+
+[BOOTSTRAP](https://getbootstrap.com/) - Used for more efficient styling and scripting.
+
+[SUMMERNOTE](https://github.com/summernote/summernote) - Used for more efficient styling and scripting.
+
+[FONTAWESOME](https://fontawesome.com/icons
+) - Supplies the icons used across the site.
+
+[CI TEMPLATE](https://github.com/Code-Institute-Org/gitpod-full-template) - To run the project using Heroku.
+
+[LUCID CHARTS](https://www.lucidchart.com/pages/) - Used to create ERD design.
+
+[AMIRESPONSIVE](https://ui.dev/amiresponsive) - To generate a mockup in different screen sizes.
+
+[AWS](https://aws.amazon.com/) - For storing static data.
+
+[Mailchimp](https://mailchimp.com/) - To create the newsletter sign-up banner.
+
+[HEROKU](https://id.heroku.com/) - To deploy the App.
+
+[CANVA](https://www.canva.com/) - To create a logo.
+
+[BALSAMIQ](https://balsamiq.com/) - To create wireframes for project.
+
+[FAVICON](https://favicon.io/favicon-generator/
+) - To create a favicon.
+
+[Sitemaps generator](www.xml-sitemaps.com)
+
+[GIT](https://git-scm.com/) - For version control.
+
+[GITHUB](https://github.com/) - To save and store the files for the website.
+
 
 ## Deployment & Local Development
 
@@ -371,16 +413,59 @@ The main technologies used are Python, Javascript, html, css & Django.
 
 ####  Django
 
+***Requirements and Procfile before Deployment:***
+
+In order to deploy the project, Heroku needs information about the technologies used. Before deployment, I createD a Procfile and a list of requirements. In some cases, you may also need a runtime.txt file specifying the version of Python to use.
+
+- Create a plain file called Procfile, at the root level of the project.
+- Type web: gunicorn my_project.wsgi into the Procfile and save.
+- In your IDE terminal, type pip3 freeze local > requirements.txt to create the requirements.
+- (Optional) Create a runtime.txt and type python-3.2(or whichever version you use).
+- Commit and push these files to the project repository.
+- In order to protect the django app secret key it was set as environment variable and stored in env.py file.
+
+
 ####  Heroku
+1. Log in to [Heroku](https://id.heroku.com) or create an account
+2. Click “New”
+3. Click “Create new app”
+4. Give your app a name and select the region closest to you, and click “Create app” to confirm
+5. Open the Settings tab and add your config vars
 
 
 ####  AWS
+1. Log in to [AWS](https://aws.amazon.com/) or create an account
+2. Create bucket: select ACLs enabled & Bucket Owner Preferred
+3. Allow Bucket Policy public access
+4. Configure cross-origin resource sharing (CORS) configuration 
+4. IAM >  Create group > Create a policy > Attach policy
+5. Retrieve access key:
+
+    - Select the user for whom you wish to create a CSV file.
+    - Select the 'Security Credentials' tab
+    - Scroll to 'Access Keys' and click 'Create access key'
+    - Select 'Application running outside AWS', and click next
+    - On the next screen, you can leave the 'Description tag value' blank. Click 'Create Access Key'
+    - Click the 'Download .csv file' button
+
 
 ### Local Development
 
 #### How to Fork
 
+1. Log in to GitHub.
+2. Go to the repository for this project, [DilaraUcar/django-portfolio-project](https://github.com/DilaraUcar/django-portfolio-project).
+3. Click the Fork button in the top right corner.
+
+
 #### How to Clone
+
+1. Log in to GitHub.
+2. Go to the repository for this project, [DilaraUcar/django-portfolio-project](https://github.com/DilaraUcar/django-portfolio-project).
+3. Click code button, select if you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3, then press enter.
+
 
 ---
 
@@ -400,8 +485,11 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 ### Content
 
+- I used [Code Institue](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopmentecomm) walkthrough tutorial "Boutique Ado" for the product display page to get the correct responsive design on all screen sizes.
 
 ### Media
+- [Pexels](https://www.pexels.com/) was used for product and all accross site images.
 
 ### Acknowledgments
-- Tutor support at Code Institute.
+- Thank You to Spencer Barriball, my Code Institute Mentor.
+- Thank you to Tutor support at Code Institute and the Slack community.
