@@ -2,8 +2,9 @@
 
 ![Yogavibe mockup](docs/readme/mockup.jpeg)
 
+Welcome to our B2C e-commerce platform, dedicated to providing high-quality yoga products for enthusiasts of all levels. Whether you're a seasoned practitioner or just beginning your yoga journey, our online store offers a variety of products to support your practice.
 
-Visit live site: [yogavibe](https://yoga-vibe-pp5-63b402220300.herokuapp.com/)
+Visit live [site](https://yoga-vibe-pp5-63b402220300.herokuapp.com/).
 
 # Table of Contents
 * [User Story Testing](#user-story-testing)
@@ -34,55 +35,261 @@ Visit live site: [yogavibe](https://yoga-vibe-pp5-63b402220300.herokuapp.com/)
 
 ## USER STORY TESTING
 
-### USER REGISTRATION	
+#### As a site user, I can view a list of products so that I can select some to purchase.
 
-| Goals | How are they achieved? |
-| --- | --- |
-| As a user, I want to be able to register on the website | Any user that wants to register can simply go to signup page and register as long as a username, email and a password is entered in correct formats, as stated on the registation page. |
-| Then the user can log in.| The users are automatically logged in when account is registered and if they logout they can login again with no issues.
- | When the user is logged in they can comment on any post they want.| Yes when user is logged in they will be redirected to home page which will have the button for writing a post in the upper right corner. If they want to comment on any posts they can do so by opening any post and then they will see the 'write a comment' button which will open up a form.|
- | |
+AC1 - When I navigate to the homepage of the e-commerce site, I should see a visually appealing and organized display of product categories.
 
-### POST / OPEN THREADS		
 
-| Goals | How are they achieved? |
-| --- | --- |
-| When a blog post title is clicked a detailed view of the post is seen. | When a post is opened the user will be able to see the contents of the post and all its comments.|
-| Given a logged in user, they can create a post. | All logged in users can create posts by clicking the new post button on the home page. |
-| Given a logged in user, they can read a post.| Yes all logged in users can read all posts that are published. |
+* **Summary:**<br>
+    When a user visits the website he can easily see the navigation menu with all the product categories.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
 
-### MANAGE COMMENTS	
+* **Outcome:** Pass 
 
-| Goals | How are they achieved? |
-| --- | --- |
-| Given a logged in user, they can comment on a post.| All logged in users can comment on a post of their choice by opening the post they want to comment on and then pressing the 'write a comment' button that will open up a form for them to write a comment in.|
-| Given a logged in user, they can read a comment | Logged in users can read all comments by navigating to a post they want to read and seeing all comments that have been written underneath the post. |
-| Given a logged in user, they can update a comment they have made. | All users that are logged in with the account they have made a comment with to a post can edit and update the existing comment by pressing the edit button underneath their comment which will open up a form thats prefilled with the content of there comment. |
-| Given a logged in user, they can delete a comment they have made. | All users that are logged in can delete their account by going to 'My Profile' and then scroll down to the 'Delete Account' button. By clicking on this button a confirmation modal to confirm the deletion will open up.|
+AC2 - Upon selecting a specific category, I should be able to view a list of products within that category, with each product showing its name, price, and image.
 
-###  USER PROFILES		
+* **Summary:**<br>
+    When a user selects a category a page opens showing all the products in that category with each product showing the name, price and image.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
 
-| Goals | How are they achieved? |
-| --- | --- |
-| As a logged in user, I get an automatic profile page when new account is registered. | By creating a account the user will automatically get their own profile, which they can access in the navigation menu by going to 'My Profile'. |
-| As a site user, I can view the profile page for my account and others. | All profiles can be accessed, either by going to own profile by going to nav menu and clicking on 'My Profile', or by clicking on username or avatar if a post has been made which will take them to their own profile or other peoples profile if they have pressed on another persons posts username or avatar that is not their own. |
-| As a site user, I can see my posts, comments and profile picture on my profile page. | On My Profile page all comments and posts, if any, will be displayed with clickable links to the posts they have made or the post where there comment has been written. By clicking on the posts or comments on my profile it will take the user to that specific post or comment. If no comments or posts has been made by a user there will instead be a small texts that states that the user has no posts and/or no comments. |
+* **Outcome:** Pass 
 
-###  EDIT / DELETE PROFILE			
+AC3 - Each product listing should include a clickable link or button that allows me to view more detailed information about the product, such as description, specifications, and customer reviews etc.
 
-| Goals | How are they achieved? |
-| --- | --- |
-| As a logged in user, I can upload a profile picture. | Logged in users can change their avatars by heading to their profile page thats present in the top nav menu. If they then press the 'Edit Profile' button on the profile page they will be able to change there profile picture. |
-| As a logged in user, I can write a profile bio and update it. | Logged in users can write a profile bio by heading to their profile page thats present in the top nav menu. If they then press the 'Edit Profile' button on there profile page a form will be opened in which they can write a bio in, and then pressing the 'save changes' button will update the profile to display their edited bio. |
-| As a logged in user, I can delete my own profile. | In there profile page the user can delete their profile by pressing the delete account button at the bottom of page, which then opens up an confirmation bootstrap modal to confirm the deletion of their account. |
+* **Summary:**<br>
+    When a user clicks a product it opens up a product detail page, displaying the products description, pricing, and reviews.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
 
-###  POST PAGINATION				
+* **Outcome:** Pass 
 
-| Goals | How are they achieved? |
-| --- | --- |
-| Given more than one post in the database, these multiple posts are listed. | All posts are listed on the website. |
-| When a user opens the main page a list of posts is seen. | When user goes to main page of website the post are seen in a list format with the newest post appearing first after the pinned post. |
-| Then the user sees all post titles with pagination to choose what to read. | All post titles are present so that the user may choose to read a post that interests them. If more than 5 posts are present in database pagination buttons will appear at the end of the five posts that indicates that there are more posts to be seen on second page. And if the user presses the next button they will come to this second page and there will be displayed a 'prev' button to go back to main post page. |
+#### As a site user, I can register for a new account so that I can have a personal account and be able to view and edit my account.
+
+AC1 - Easily login and logout to view and edit my personal information.
+
+* **Summary:**<br>
+    Users can login and logout smoothly with hints showing if any field is written incorrect. Upon logging in theres an option to edit and update there personal information in my profile page.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - Easily recover password to recover account if password is forgotten.
+
+* **Summary:**<br>
+    If user forgets password they can press the option that password has been forgotten and gets an email with a link to change there password.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - Receive an email confirmation after registation.
+
+* **Summary:**<br>
+    When a user registers they will receive a email telling them to confirm there registation.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+#### As a site user, I can view and manage my user profile so that I can update my personal information and preferences.
+
+AC1 - Upon logging into my account, I should be able to access my user profile page, which displays my current personal information such as name, email address, shipping address, and contact information.
+
+
+* **Summary:**<br>
+    Users can login and access there user profile by navigating to the my account on nav menu which opens up a dropdown with my profile in it. By going to my profile the user will be able to update there personal information.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - The user profile page should display a history of my past orders, including order dates, order numbers, items purchased, and order statuses (e.g., pending, shipped). I should be able to click on each order to view detailed information about the items ordered and their respective statuses.
+
+
+* **Summary:**<br>
+    My profile page displayes a list of pas order history if user has made any orders. All orders are clickable which will take them to that pas order confirmation.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - Within the profiles section, there should be a dedicated "Favorites" page where I can view a list of products I have marked as favorites. I should be able to add new products to my favorites list and remove existing ones as needed. The list of favorites should persist across sessions.
+
+
+* **Summary:**<br>
+    When user is logged in a favorite section will appear on navigation which will take them to there favorites page. If the user has favorited any products they will be displayed on this page. Theres also an option for removing from favorites. 
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+#### As a site user, I can leave reviews for products so that I can share my experience with other customers and help them make informed purchase decisions.
+
+AC1 - As a logged-in user, when I navigate to the product details page, I should see a section where I can write a review for the product.
+
+* **Summary:**<br>
+    When user is logged in a button will appear underneath a product on the products detail page. When pressing this button a form will be opened in which the user can write a review for that specific product.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - As a site user, when i press write a review button and am not logged in i will be informed that i need to be logged in in order to leave a product review.
+
+
+* **Summary:**<br>
+    When users are not logged in there is instead of the button a text displaying that the user must log in to leave a review.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - After submitting a review, it should appear on the product page under the reviews section. The review should display my username, review text, rating, and the date it was submitted.
+
+* **Summary:**<br>
+    When review has been submitted the review display section updates to display the review written by that user. All fields appear as they are all required to fill in to leave a review. 
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+#### As an admin user, I want to have full CRUD functionality for products so that I can effortlessly maintain an up-to-date site and product information.
+
+AC1 - As an admin user, I should be able to add new products to the store. The product creation form should include fields for product name, description, price, category, and image upload. Upon submission, the new product should appear immediately in the store's product listings.
+
+* **Summary:**<br>
+    As a logged in admin user you can add products to the store my going to my account 'manage products' which will open up add a product form with all relevan required fields.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - As an admin user, I should be able to edit existing product details. When I navigate to the product section, I should see a list of current products with an option to edit each product. The edit form should allow modification of product name, description, price, category, and image. Changes made should be reflected immediately in the product listings.
+
+* **Summary:**<br>
+    As a logged in admin user there will be displayed a clickable button beside all existing products. when this edit button is clidked a new page opens with the edit product form with all relevant fields required. All changes are immediate.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - As an admin user, I should be able to remove products from the store. There should be a delete option available next to each product in the product section. Upon deletion, the product should be permanently removed from the store.
+
+* **Summary:**<br>
+   As a logged in admin user i will see a delete button beside each existing product which will immedietly delete that specific product.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+#### As a shopper, I want to be able to select products, add them to my cart, and complete the checkout process smoothly and securely.
+
+AC1 - As a shopper, I should be able to browse products, view detailed information about each product, and add desired products to my shopping cart. The cart should update dynamically to reflect the added items.
+
+* **Summary:**<br>
+    As a site user you can view, add and update product to cart.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - From the shopping cart page, I should be able to view all products added, their quantities, and prices. I should have options to update quantities and remove products.
+
+* **Summary:**<br>
+    As a site user navigating to the shopping page all fields are visible as long as the user has added something to the cart. The option to update quantity is available on each product.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - After finalizing my product selection in the cart, I should be able to proceed to the checkout process. There should be a clear and visible "Checkout" button or link that initiates the checkout flow.
+
+* **Summary:**<br>
+   The checkout button is right underneath everything in the cart which will take you directly to checkout.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC4 - Easily enter payment information
+
+* **Summary:**<br>
+   Payment information is quik and easy and error handling is functional.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC5 - Upon successful completion of the checkout process, I should receive an order confirmation page and email that includes an order summary, and any other relevant information. The order should also be visible in my account's order history.
+
+* **Summary:**<br>
+   Upon successful checkout the user will get to order confirmation page. this order confirmation is also sent to there email.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+
+#### As a site user, I can enter a keyword in the search field, so that I can view all products associated with that keyword
+
+AC1 - When I navigate to the e-commerce site, there should be a clearly visible search field prominently displayed, such as in the header or a designated search bar area.
+
+* **Summary:**<br>
+    The search field is visible accross all sites on the website in the header.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - Upon entering a keyword in the search, the page should display a list of all products that match the search criteria.
+
+* **Summary:**<br>
+    As long as the keyword entered is present in any of the products that product will be displayed in search result.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - If the search does not return any results for the entered keyword, the system should display a clear message indicating that no products match the search criteria. The user will then be asked to try again or go back to home page.
+
+* **Summary:**<br>
+   When search is not meeting criteria a error message will be displayed stating that the users search did not meet criteria and to please try again.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+#### As a User, I can see recommended products, so that I can purchase other useful items that would go along with my main purchase.
+
+AC1 - When I view the details of a product on the e-commerce site, I should see a section displaying recommended products.
+
+* **Summary:**<br>
+    Recommended products are displayed right underneath the products detail.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC2 - Recommended products should be visually distinguishable and clearly presented alongside the main product details. Each recommended product should include its name, image, price, and a link to view more details.
+
+* **Summary:**<br>
+    All fields are present and button is functioning.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
+
+AC3 - After completing a purchase and viewing the order confirmation page, there should be a section displaying recommended products related to the items purchased in the order. This allows users to consider additional products they might find useful based on their recent purchase.
+
+* **Summary:**<br>
+   The order confirmation page has a recommended products section at the bottom with the option to view more for that product.
+    <br>
+       *By testing all these features, it can be affirmed that the user story is accomplished.*<br>
+
+* **Outcome:** Pass 
 
 ---
 
@@ -98,28 +305,9 @@ I used [Python Linter - Pep8CI](https://pep8ci.herokuapp.com/) to test python co
 
 I used Lighthouse in Chrome Developer Tools in incognito mode to test the performance, accessibility, best practices and SEO of the website.
 
-In the lighthouse scores at first I did not get the scores i wanted which can be seen in this screenshot:
+Please see bellow the home page as an example:
 
-![Lighthouse score issues description](docs/testing/lh-desc.jpeg)
-
-The biggest issue seemed to be coming from clousinary.
-The lower score is partly related to the use of http instead of https on the cloudinary images combined with the size of the images. I looked in Slack and found that other students also have had these issues with cloudinary and they had fixed this issue by adding this code to their settings.py file:
-
-![Cloudinary code added to settings](docs/testing/cloudinary-settings.jpeg)
-
-Adding this fixed the issue and all my lighthouse scores was in the green now:
-
-##### HOME SCORE
-
-![Home](docs/testing/lh-home.jpeg)
-
-##### POST DETAIL SCORE
-
-![Post Detail](docs/testing/lh-post.jpeg)<br><br>
-
-##### PROFILE SCORE
-
-![Profile](docs/testing/lh-profile.jpeg)<br><br>
+![Lighthouse score](docs/testing/lh-score.jpeg)
 
 ---
 
@@ -131,9 +319,9 @@ I used [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/validator) to 
 
 ---
 
-### W3 HTML VALIDATOR
+### W3 HTML VALIDATOá
 
-I used [W3 Html Validator](https://validator.w3.org/) to test all html pages and found no issues as can be seen in this screenshot:
+I used [W3 Html Validator](https://validator.w3.org/) to test all html pages and found some issues with list items (li) elements being inside a nav element and title being inside a head element. When these warnings where corrected no issues where found as can be seen in this screenshot:
 
 ![w3 html Validator](docs/testing/html-validator.jpeg)
 
@@ -150,13 +338,12 @@ I used [JSHint Validator](https://jshint.com/) to test all JavaScript files and 
 
 ## MANUAL TESTING
 
-Manual testing was carried out as soon as the project started using exploratory testing techniques and a list of bugs was identified and placed in a document to tackle.
+Manual testing began as soon as the project started, utilizing exploratory testing techniques. A list of identified bugs was documented for resolution.
 
-At the same time as building the application, it was tested before moving to other steps and checking to make sure no major issues were found. What helped me with tackling the errors and code not working the use of console.log and print statements was extensively used for debugging purposes.
+During the application development, continuous testing was performed before progressing to subsequent steps, ensuring no major issues were present. Debugging was facilitated by extensively using console.log and print statements to identify and resolve errors.
 
-Afterwards, formal test cases were developed and executed.
+At a later stage, automated testing was conducted using validators. All errors were fixed, and it was confirmed that all user goals were met. Following this, a test table was created to document the results.
 
-At a later stage Automated testing was carried out using validators and all errors were fixed, it was checked that all user goals are met and after this, a test table was created.
 
 ### FULL TESTING
 
@@ -176,43 +363,84 @@ Each device tested the site using the following browsers:
 - Safari
 - Firefox
 
+### Functionality Test Cases
+
+Comprehensive testing has been conducted to ensure that all website functionalities are working as intended, providing users with a reliable and enjoyable browsing experience.
+
+| Functionality | What's being tested | Result |
+|------|-------------|--------|
+| Registration | A new user can create an account successfully. | Pass |
+|  | The website displays an appropriate error message with hints when validation fails. | Pass |
+|  | The website displays an appropriate message if link is invalid or token expired | Pass |
+|  | User is signed in automatically when they click confirm button | Pass |
+| Admin Panel | Admin can login to admin panel. | Pass |
+|  | Admin can add, edit and delete products. | Pass |
+|  | Admin can add edit and delete menu items. | Pass |
+|  | Admin can delete users. | Pass |
+|  | Admin panel can be accessed by only staff status user | Pass |
+|Login | A registered user can log in successfully. | Pass |
+|  | The website displays an appropriate error message when a user enters an incorrect email or password. | Pass |
+|  | A logged-in user can sign out successfully. | Pass |
+|  | The website displays an appropriate error message when a user enters invalid data (e.g., date before current day, not allowed charset). | Pass |
+|  | A user cannot edit or delete another user's profile | Pass |
+|Product CRUD | Verify that a logged-in user can create, update and delete products from the shopping cart | Pass |
+|  | Confirmation message is displayed when changes are saved | Pass |
+|  | Only authenticated users can leave reviews | Pass |
+|  | Confirmation message is displayed when a product is updated or deleted | Pass |
+|Menu| A logged-in admin can add, edit or delete products | Pass |
+|Favorite| A logged in user can add products to there favorite | Pass |
+|  | A logged-in user can remove products from there favorite. | Pass |
+
+
+---
+
 ## BUG TRACKER
 
 During development, I came across multitude of bugs. With some debugging, and help from tutors and Slack community, I got to the root of each issue and corrected its behavior.
 
 ### SOLVED BUGS
 
-**Issue: Incorrect or Missing Avatar Images for New Users**
+**Issue: Search field not opening up correctly on medium and small screens**
 
 ***Problem Description:***
 
-Previously, avatar images were not loading correctly or were missing entirely for new users on the profile page. This issue was due to the image logic implementation, which required refinement to ensure proper display of user images.
+The search input field was opening up outside of viewport on smaller screens.
 
 **Solution:**
 
 To resolve the issue, the following changes were implemented:
 
-- The image logic for displaying user avatars was updated based on insights gained from a Code Institute (CI) [blog walkthrough project](https://github.com/Code-Institute-Solutions/blog/blob/main/15_testing/blog/templates/blog/post_detail.html) for image fields. This involved adopting a standardized approach to handle image rendering across different templates **('index.html', 'post_detail.html', 'profile.html')**.
+- I added a media query for smaller screens and set right and top values to align the field correctly on smaller screens. after doing this everything aligned nicely and the bug was fixed.
 
 <details>
-<summary>Code Before bug fix</summary>
+<summary>Search input visual Issue</summary>
 
-![Image logic code before](docs/testing/bug-fixes/avatar-logic-before.jpeg)
+![Search input visual issue](docs/testing/search-input-error.jpeg)
 </details>
 <details>
 <summary>Code used for bug fix</summary>
 
-![Image logic code before](docs/testing/bug-fixes/avatar-logic-after.jpeg)
+![Code used to fix bug](docs/testing/testing/search-error-fix-code.jpeg)
 </details>
 
 ---
 
-carosell arrows dont work
+**Issue: Image carosell arrows dont work **
+
+***Problem Description:***
+
+The image carosell arrown on product detail page was not functioning. 
+
+**Solution:**
+
+To resolve the issue, the following changes were implemented:
+
+- Since i already have a carosell for the images to change automatically i decided to just remove the arrows to solve this bug.
 
 ### UN-FIXED BUGS
 
-No unsolved bugs.
-
+No unsolved bugs found.
+ 
 <br>
 
 [< Back to README](README.md)
