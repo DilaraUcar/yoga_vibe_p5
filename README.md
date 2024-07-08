@@ -218,28 +218,123 @@ Before building the site, I made wireframes for all the main sites. When buildin
 #### Existing Features
 
 **Logo**
+<br>
+The website's visual identity.
 
-**Fav Icon**
+![logo](docs/readme/web-logo.jpeg)
 
-**Nav Bar**
+**FavIcon**
+<br>
+The website's favicon.
+
+![favicon](docs/readme/web-favicon.jpeg)
+
+**NavBar**
+<br>
+All pages include a navigation bar
+
+![Navigation](docs/readme/web-navbar.jpeg)
 
 **Footer**
+<br>
+All pages include a footer.
 
-**Hero Image**
+![footer](docs/readme/web-footer.jpeg)
 
 **Search**
+<br>
+The pages include a search bar to search for products with different keywords.
+
+![logo](docs/readme/web-search.jpeg)
+
+**Hero Image**
+<br>
+The home page includes a hero image.
+
+![hero image](docs/readme/web-hero.jpeg)
+
+**Product Category**
+<br>
+The website includes product categories for searching and filtering different products.
+
+![Product category](docs/readme/web-category.jpeg)
 
 **Product Display**
+<br>
+A list of all the products is displayed on this page.
+
+![Product list](docs/readme/web-product-list.jpeg)
 
 **Product CRUD Functionality**
+<br>
+The admin can create, read, update and delete books in the front end and admin panel.
+
+![Product crud](docs/readme/web-product-crud.jpeg)
+
+**Add a product**
+<br>
+Adding a product page
+
+![Add a product](docs/readme/web-add-product.jpeg)
+
+**Edit a product**
+<br>
+Editing a product page 
+
+![Edit a product](docs/readme/web-edit-product.jpeg)
+
+**Product Details**
+<br>
+A detailed product page.
+
+![Product detail](docs/readme/web-product-detail.jpeg)
+
+**Product Recommend**
+<br>
+Product recommendation on the product details page.
+
+![Product recommend](docs/readme/web-product-recommend.jpeg)
+
+**Product Review**
+<br>
+A logged in user can write a review. If user is not logged in they can still view reviews but will be notified that they must be logged in to write a comment.
+
+![Product review](docs/readme/web-product-review.jpeg)
 
 **Allauth**
+<br>
+Different templates for the user to log in, sign up, reset password, etc. This is the log in page.
+
+![Allauth templates](docs/readme/web-allauth.jpeg)
 
 **User Feedback**
+<br>
+The user receives feedback providing messages with relevant information such as when they update a product in their bag as seen in the example bellow:
 
-**Reviews**
+![user feedback](docs/readme/web-user-feedback.jpeg)
 
-**Product Favorite**
+**Bag**
+<br>
+The user can create, read, update and delete books in their shopping bag.
+
+![bag](docs/readme/web-bag.jpeg)
+
+**Checkout**
+<br>
+The user can have a prefilled checkout information if they are logged in and have updated there user profile. The fields will also be filled in if they have made an order before and have the save info checkbox checked.
+
+![checkout](docs/readme/web-checkout.jpeg)
+
+**Order Confirmation**
+<br>
+Order confirmation page:
+
+![Order confirmation part 1](docs/readme/web-order-confirmation-1.jpeg)
+![Order confirmation part 1](docs/readme/web-order-confirmation-2.jpeg)
+![Order confirmation part 1](docs/readme/web-order-confirmation-3.jpeg)
+
+
+
 
 
 ---
