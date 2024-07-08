@@ -4,7 +4,7 @@
 
 This website is designed for yoga enthusiasts of all levels, from beginners to experienced practitioners. 
 
-Visit the live site: [YogaVibe]()
+Visit the live site: [YogaVibe](https://yoga-vibe-pp5-63b402220300.herokuapp.com/)
 
 # Table of contents
 

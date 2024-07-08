@@ -1,21 +1,21 @@
 {% load static %}
 
 <!-- Logo -->
-<li class="list-inline-item text-center">
+<div class="list-inline-item text-center">
     <a class="nav-link d-block d-lg-none" href="{% url 'home' %}">
         <img src="{% static 'media/yoga-vibe-logo.png' %}" alt="YogaVibe logo" class="logo-image">
     </a>
-</li>
+</div>
 
 <!-- Search -->
-<li class="list-inline-item">
+<div class="list-inline-item">
     <a class="nav-link text-black d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
             <p class="my-0">Search</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+    <div class="dropdown-menu border-0 w-sm-100 p-3 rounded-0 my-0 mobile-move-right" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -29,20 +29,20 @@
             </div>
         </form>
     </div>
-</li>
+</div>
 
 <!-- Favorites -->
-<li class="list-inline-item">
+<div class="list-inline-item">
     <a href="{% url 'favorite_list' %}" class="nav-link text-black d-block d-lg-none text-decoration-none">
         <div class="text-center">
             <i class="fa-regular fa-heart fa-lg"></i>
             <p class="my-0">Favorites</p>
         </div>
     </a>
-</li>
+</div>
 
 <!-- My Account -->
-<li class="list-inline-item dropdown">
+<div class="list-inline-item dropdown">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
@@ -61,10 +61,10 @@
         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
         {% endif %}
     </div>
-</li>
+</div>
 
 <!-- Cart -->
-<li class="list-inline-item">
+<div class="list-inline-item">
     <a class="{% if total_items_in_cart %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -77,4 +77,4 @@
             </p>
         </div>
     </a>
-</li>
+</div>

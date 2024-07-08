@@ -696,4 +696,13 @@ a {
     }
 }
 
+/* Search bar styling fix */
+@media (max-width: 425px) and (min-width: 425px) {
+    .mobile-move-right {
+        right: 20px;
+        top: 130px;
+    }
+  }
+  
+
 
