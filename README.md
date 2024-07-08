@@ -138,10 +138,82 @@ The database schema shows the structure of the database, the type and their rela
 I decided to keep the color pallete very clean and stick with black and white.
 
 ### Typography
+For this site, I kept it very simple with a clean sans-serif and Figtree font across the whole site.
 
 ### Imagery
+All images where taken from [Pexels](https://www.pexels.com/).
 
 ### Wireframes
+Before building the site, I made wireframes for all the main sites. When building I made more wireframes as I got new feature itead I wanted to implement and also i made some changes on the pages such as the layout on tablet screens to fit the design better.
+
+**HOME WIREFRAMES:**
+<details>
+<summary>Desktop</summary>
+
+![Wireframe](docs/readme/home-lg-wf.jpeg)
+</details>
+<details>
+<summary>Tablet</summary>
+
+![Wireframe](docs/readme/home-md-wf.jpeg)
+</details>
+<details>
+<summary>Phone</summary>
+
+![Wireframe](docs/readme/home-sm-wf.jpeg)
+</details>
+
+---
+**PRODUCT WIREFRAMES:**
+<details>
+<summary>Desktop</summary>
+
+![Wireframe](docs/readme/product-lg-wf.jpeg)
+</details>
+<details>
+<summary>Tablet</summary>
+
+![Wireframe](docs/readme/product-md-wf.jpeg)
+</details>
+<details>
+<summary>Phone</summary>
+
+![Wireframe](docs/readme/product-sm-wf.jpeg)
+</details>
+
+---
+**PRODUCT DETAILS WIREFRAMES:**
+<details>
+<summary>Desktop</summary>
+
+![Wireframe](docs/readme/product-detail-sm-wf.jpeg)
+</details>
+
+<details>
+<summary>Phone</summary>
+
+![Wireframe](docs/readme/product-detail-sm-wf.jpeg)
+</details>
+
+---
+**FAVORITES WIREFRAMES:**
+<details>
+<summary>Desktop</summary>
+
+![Wireframe](docs/readme/favorite-lg-wf.jpeg)
+</details>
+<details>
+<summary>Tablet</summary>
+
+![Wireframe](docs/readme/favorite-md-wf.jpeg)
+</details>
+<details>
+<summary>Phone</summary>
+
+![Wireframe](docs/readme/favorite-sm-wf.jpeg)
+</details>
+
+---
 
 #### Existing Features
 
