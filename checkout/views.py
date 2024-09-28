@@ -56,6 +56,19 @@ def checkout(request):
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
+        # Get the total cost from the bag_contents
+        current_bag = bag_contents(request)
+        subtotal = current_bag['grand_total']  # Assuming this is the subtotal
+
+        # Calculate delivery cost based on the subtotal
+        if subtotal < settings.FREE_DELIVERY_THRESHOLD:
+            delivery_cost = (subtotal * settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        else:
+            delivery_cost = 0  # Free delivery
+
+        grand_total = subtotal + delivery_cost  # Calculate grand total
+
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -66,6 +79,9 @@ def checkout(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
+            'order_total': subtotal,  # Make sure to pass this
+            'delivery_cost': delivery_cost,  # Calculate dynamic delivery cost
+            'grand_total': grand_total,  # Calculate grand total
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -73,6 +89,9 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            order.order_total = subtotal  # Set the order total
+            order.delivery_cost = delivery_cost  # Set the dynamic delivery cost
+            order.grand_total = grand_total  # Set the grand total
             order.save()
             for item_id, item_data in bag.items():
                 try:
