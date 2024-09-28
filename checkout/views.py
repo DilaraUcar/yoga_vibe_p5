@@ -58,7 +58,7 @@ def checkout(request):
 
         # Get the total cost from the bag_contents
         current_bag = bag_contents(request)
-        subtotal = current_bag['order_total']  # Assuming this is the subtotal
+        subtotal = current_bag['grand_total']  # Assuming this is the subtotal
 
         # Calculate delivery cost based on the subtotal
         if subtotal < settings.FREE_DELIVERY_THRESHOLD:
