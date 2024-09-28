@@ -16,6 +16,7 @@ import stripe
 import json
 
 
+
 def get_recommended_products(user_profile):
     orders = Order.objects.filter(user_profile=user_profile)
     ordered_product_ids = (
@@ -68,6 +69,9 @@ def checkout(request):
 
         grand_total = subtotal + delivery_cost  # Calculate grand total
 
+        # Print the values
+        print(f'Subtotal: {subtotal}, Delivery Cost: {delivery_cost}, Grand Total: {grand_total}')
+
 
         form_data = {
             'full_name': request.POST['full_name'],
@@ -89,9 +93,11 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+
             order.order_total = subtotal  # Set the order total
             order.delivery_cost = delivery_cost  # Set the dynamic delivery cost
             order.grand_total = grand_total  # Set the grand total
+
             order.save()
             for item_id, item_data in bag.items():
                 try:
@@ -178,6 +184,10 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    # Print the retrieved values
+    print(f'Order Total: {order.order_total}, Delivery Cost: {order.delivery_cost}, Grand Total: {order.grand_total}')
+
 
     if request.user.is_authenticated:
         try:
