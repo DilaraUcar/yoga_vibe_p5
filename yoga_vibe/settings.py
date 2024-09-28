@@ -14,9 +14,15 @@ import os
 import dj_database_url
 
 from pathlib import Path
+from dotenv import load_dotenv
 
 if os.path.isfile('env.py'):
     import env
+
+load_dotenv()  # Load environment variables from .env file
+
+HEROKU_API_KEY = os.getenv("HEROKU_API_KEY")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
