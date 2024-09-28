@@ -60,6 +60,7 @@ def bag_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
         'total_items_in_cart': total_items_in_cart,
+        'subtotal': total,  # Explicitly define subtotal
     }
 
     return context
