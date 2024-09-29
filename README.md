@@ -37,6 +37,13 @@ Visit the live site: [YogaVibe](https://yoga-vibe-pp5-63b402220300.herokuapp.com
 - [Deployment & Local Development](#Deployment--Local-Development)
 
   - [Deployment](#Deployment)
+    - [Django](#django)
+    - [Herou](#heroku)
+    - [Heroku Settings](#heroku-settings)
+    - [Deploy the project to Heroku](#deploy-the-project-to-heroku)
+
+  - [AWS S3 bucket for static storage](#aws-s3-bucket-for-static-storage)
+
   - [Local Development](#Local-Development)
     - [How to Fork](#How-to-Fork)
     - [How to Clone](#How-to-Clone)
