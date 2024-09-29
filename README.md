@@ -415,12 +415,12 @@ The main technologies used are Python, Javascript, html, css & Django.
 
 ***Requirements and Procfile before Deployment:***
 
-In order to deploy the project, Heroku needs information about the technologies used. Before deployment, I createD a Procfile and a list of requirements. In some cases, you may also need a runtime.txt file specifying the version of Python to use.
+In order to deploy the project, Heroku needs information about the technologies used. Before deployment, I created a Procfile and a list of requirements. In some cases, you may also need a runtime.txt file specifying the version of Python to use.
 
 - Create a plain file called Procfile, at the root level of the project.
-- Type web: gunicorn my_project.wsgi into the Procfile and save.
-- In your IDE terminal, type pip3 freeze local > requirements.txt to create the requirements.
-- (Optional) Create a runtime.txt and type python-3.2(or whichever version you use).
+- Type web: `web: gunicorn my_project.wsgi`. into the Procfile and save.
+- In your IDE terminal, type `pip3 freeze local > requirements.txt` to create the requirements.
+- (Optional) Create a runtime.txt and type `python-3.2` (or whichever version you use).
 - Commit and push these files to the project repository.
 - In order to protect the django app secret key it was set as environment variable and stored in env.py file.
 
@@ -429,11 +429,70 @@ In order to deploy the project, Heroku needs information about the technologies 
 1. Log in to [Heroku](https://id.heroku.com) or create an account
 2. Click “New”
 3. Click “Create new app”
-4. Give your app a name and select the region closest to you, and click “Create app” to confirm
+4. Give your app a unique name and select the region closest to you, and click “Create app” to confirm
 5. Open the Settings tab and add your config vars
 
+#### Heroku Settings:
 
-####  AWS
+For Heroku to be able to process and render the project, you must define some environment variables. Deploying the project without these is like trying to start a car without the key.
+
+Go to the settings page of your new app you created.
+Scroll down and open the Config Vars.
+Add a `DATABASE_URL` variable and assign it a link to your database.
+Add a `SECRET_KEY` variable and assign it a secret key of your choice, you can use a secret key generator for this (should be different than the one in project env file).
+Add a 
+
+Project Settings:
+
+Important that the environment variables and settings in the django project are compatible with the settings on heroku. These are the steps to ensure a proper setup for working deployment:
+
+Include `https://<your_app_name>.herokuapp.com` in the `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` lists inside the settings.py file.
+Make sure that the environment variables (DATABASE_URL, SECRET_KEY) are correctly set to `os.environ.get("<variable_name>")`.
+If making changes to static files or apps, make sure to run collectstatic or migrate as needed.
+Commit and push to the repository.
+
+#### Deploy the project to Heroku: 
+
+Once your Heroku settings and GitHub repository are up to date, it's time to connect the two and deploy the project:
+
+- Go to the Deploy tab of your Heroku app.
+- Scroll down and find "Deployment method" section and click GitHub.
+- Type in the name of your repository to search and click 'Connect' to connect the repository.
+(Optional) Enable automatic deployment to automatically update the Heroku app whenever you push to GitHub.
+- Click "Deploy branch" main.
+- Wait for Heroku to finish building the app.
+
+Upon successful deployment, click the "View" button to open the deployed app.
+
+
+### AWS S3 bucket for static storage.
+This project stores all of its static & media files in an S3 bucket. Detailed instructions are available [here](https://aws.amazon.com/s3/?nc2=h_ql_prod_fs_s3) on how to set up and configure the S3 bucket on the AWS site.
+
+For Django, the following lines in settings.py file are necessary :
+
+    if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'PROJECT_NAME'
+    AWS_S3_REGION_NAME = 'REGION'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    
+
+Replace the PROJECT_NAME and REGION placeholders with the appropriate values for your project. Then set USE_AWS = True in heroku config vars.
+
+A summary of the steps taken for this project in retrieving a AWS S3 bucket includes:
+
 1. Log in to [AWS](https://aws.amazon.com/) or create an account
 2. Create bucket: select ACLs enabled & Bucket Owner Preferred
 3. Allow Bucket Policy public access
