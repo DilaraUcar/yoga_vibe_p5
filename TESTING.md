@@ -413,19 +413,14 @@ To resolve the issue, the following changes were implemented:
 - I added a media query for smaller screens and set right and top values to align the field correctly on smaller screens. after doing this everything aligned nicely and the bug was fixed.
 
 <details>
-<summary>Search input visual Issue</summary>
-
-![Search input visual issue](docs/testing/search-input-error.jpeg)
-</details>
-<details>
 <summary>Code used for bug fix</summary>
 
-![Code used to fix bug](docs/testing/testing/search-error-fix-code.jpeg)
+![Code used to fix bug](docs/testing/search-error-fix-code.jpeg)
 </details>
 
 ---
 
-**Issue: Image carosell arrows dont work **
+**Issue: Image carosell arrows dont work**
 
 ***Problem Description:***
 
@@ -436,6 +431,34 @@ The image carosell arrown on product detail page was not functioning.
 To resolve the issue, the following changes were implemented:
 
 - Since i already have a carosell for the images to change automatically i decided to just remove the arrows to solve this bug.
+
+---
+
+**Issue: Chekout confirmation gives back order being saved in databse with a value of $0**
+
+***Problem Description:***
+
+The order confirmation and order confirmation returns the order as $0. This issue upon further examination was only present in the deployed version and only when an order went through and the user is presented with an order confirmation.
+
+**Solution:**
+
+To resolve the issue, the following changes were implemented:
+
+- I updated and added code into the chekout views and the bag context.py file to solve this issue.
+
+<details>
+<summary>Code used in views.py</summary>
+
+![Chekout / Views.py bug fix 1](docs/testing/chekout-view-1.jpeg)
+
+![Chekout / Views.py bug fix 2](docs/testing/checkout-view-2.jpeg)
+</details>
+<details>
+<summary>Code used in context.py</summary>
+
+![Bag / Chekout.py bug fix](docs/testing/bag-context.jpeg)
+</details>
+
 
 ### UN-FIXED BUGS
 
