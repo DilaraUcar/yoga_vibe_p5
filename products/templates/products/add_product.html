@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container custom-product-form text-black">
+<div class="container custom-overlay-profile-form text-black">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 text-center">
             <hr>
