@@ -410,12 +410,17 @@ The search input field was opening up outside of viewport on smaller screens.
 
 To resolve the issue, the following changes were implemented:
 
-- I added a media query for smaller screens and set right and top values to align the field correctly on smaller screens. after doing this everything aligned nicely and the bug was fixed.
+- I added, using bootstrap, a search modal for medium screens and smaller to fix this issue and give a pleasing look to the eye instead of the search field being in odd alignment on the screen.
 
+<details>
+<summary>Visual of bug</summary>
+
+![Visual of search field bug](docs/testing/search-visual.jpeg)
+</details>
 <details>
 <summary>Code used for bug fix</summary>
 
-![Code used to fix bug](docs/testing/search-error-fix-code.jpeg)
+![Code used to fix bug](docs/testing/search-modal.jpeg)
 </details>
 
 ---
