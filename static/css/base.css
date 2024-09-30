@@ -450,6 +450,12 @@ a {
     padding-top: 10px;
 }
 
+#id_image1,
+#id_image2,
+#id_image3 {
+    width: -webkit-fill-available;
+}
+
 
 /* ------------------------------------------------------------ Shopping Bag */
 
@@ -571,7 +577,7 @@ a {
 
     .custom-product-form {
         margin-top: 100px;
-        width: min-content;
+        width: 85%;
     }
 
     /* Styling for bag page on mobile screens*/
