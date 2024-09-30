@@ -457,6 +457,18 @@ a {
     margin-top: 15rem !important;
 }
 
+/*------------------------------------------------------------ Modal Backdrop */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: auto;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -697,14 +709,3 @@ a {
         gap: 0.5rem; /* Adjust the spacing between buttons for small screens */
     }
 }
-
-/* Search bar styling fix */
-@media (max-width: 425px) and (min-width: 425px) {
-    .mobile-move-right {
-        right: 20px;
-        top: 130px;
-    }
-  }
-  
-
-
