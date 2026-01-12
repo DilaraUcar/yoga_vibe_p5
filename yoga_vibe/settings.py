@@ -36,14 +36,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'yoga-vibe-pp5-63b402220300.herokuapp.com', 'localhost',
+    'yoga-vibe-p5.onrender.com',  'localhost',
     '8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io',
     '8000-dilaraucar-yogavibep5-6vy7i1u4e0v.ws.codeinstitute-ide.net',
     '8000-dilaraucar-yogavibep5-ckew4xluqee.ws-eu116.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://yoga-vibe-pp5-63b402220300.herokuapp.com',
+    'https://yoga-vibe-p5.onrender.com',
     'https://8000-dilaraucar-yogavibep5-xdnj8ewgy73.ws-eu114.gitpod.io',
     'https://8000-dilaraucar-yogavibep5-6vy7i1u4e0v.ws.codeinstitute-ide.net',
     'https://8000-dilaraucar-yogavibep5-ckew4xluqee.ws-eu116.gitpod.io'
