@@ -1,0 +1,47 @@
+.border-profile-custom {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.custom-overlay-profile-form {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 35px;
+    margin-top: 40px;
+    max-width: 750px !important; /* Adjust the value as needed */
+}
+
+.order-history {
+    max-height: 416px; /* height of profile form + submit button */
+    overflow-y: auto;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+    font-weight: 500;
+}
+
+.form-group {
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* Margin at top to push forms down on mobile */
+@media (max-width: 425px) {
+    .custom-overlay-profile-form {
+     margin-top: 100px;
+     width: min-content;
+    }
+ }
+ 
+
+/* Custom Forms on tablet screens */
+@media (max-width: 768px) {
+    .custom-overlay-profile-form {
+        max-width: fit-content;
+    }
+
+    .pt-md-screens {
+        padding-top: 20px;
+    }
+ }
+

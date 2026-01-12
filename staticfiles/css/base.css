@@ -1,0 +1,717 @@
+html {
+    height: 100%;
+    position: relative;
+}
+
+.custom-bg-img {
+    background: url('/media/hero.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Figtree', sans-serif;
+    position: relative;
+}
+
+/* Ensure main content pushes footer down when there's enough content */
+main {
+    padding-bottom: 60px; /* Same height as footer to prevent content overlap */
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+/* Hero image text shadow for improved readability */
+.custom-text {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.btn {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.3);
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.fa-trash-can:hover {
+    color: red;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+/* -------------------------------- Home page app & general styling across site*/
+.logo-image {
+    width: 200px;
+    height: auto;
+}
+
+.custom-nav {
+    background-color: rgba(241, 241, 249, 1);
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.card-background-cover {
+    background: rgba(241, 241, 249, 0.5);
+    padding: 15px;
+    height: fit-content;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.bg-custom {
+    background-color: #000;
+}
+
+.custom-hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-toggler {
+    padding: 5px;
+    background-color: rgba(241, 241, 249, 0.8);
+}
+
+.nav-link {
+    letter-spacing: 1.5px;
+}
+
+.my-1-custom-band {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom CSS for hover dropdown */
+.hover-dropdown {
+    display: none;
+    /* Initially hide dropdown */
+}
+
+.navbar-nav .nav-item:hover .hover-dropdown {
+    display: block;
+    /* Display dropdown on hover */
+}
+
+/* Adjust dropdown position */
+.dropdown-menu {
+    margin-top: 0;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+/* Ensuring consistent product img size to maintain visual coherence */
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+    /* Ensures the image covers the entire container */
+}
+
+.text-auth-shadow {
+    text-shadow: 0.9px 0.7px #6e6e6e,
+    -1px -2px 3px #fff;
+}
+
+.footer-background {
+    background-color: rgba(241, 241, 249, 1);
+}
+
+#socials > a {
+    color: #000;
+}
+
+i:hover,
+i:focus,
+i:active {
+    color: #4c4c4c;
+}
+
+.footer-links {
+    text-align: center;
+    padding: 15px;
+    list-style-type: none;
+}
+
+a {
+    color: #000;
+}
+
+/* ------------------------------------------------------------ Mailchimp */
+#mc_embed_signup {
+    background: transparent !important;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: min-content;
+    border: 0.1px solid;
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+#mc_embed_signup h2 {
+    margin: 0 !important;
+}
+
+.refferal_badge {
+    height: 1px !important;
+}
+
+#mc_embed_signup div.response {
+    margin: 0 !important;
+    padding: 0 0 1rem 0 !important;
+    font-weight: bold;
+    z-index: 1;
+    width: 80%;
+}
+
+/* ------------------------------------------------------------ Product Page */
+
+.mobile-product-m {
+    margin-top: 2rem;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+}
+
+.favorite-btn i {
+    font-size: 24px; /* Size of the heart icon */
+}
+
+#product-name {
+    font-size: large;
+    font-weight: 700;
+    color: #000;
+}
+
+.custom-heart {
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+    border-radius: 3px;
+}
+
+.card-body {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    width: auto;
+}
+
+#review-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.recommended-product-img {
+    max-width: 100%; 
+    height: 300px; 
+    width: 100%; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+        display: none;
+}
+
+/* ------------------------------------------------------------ Shopping Bag */
+
+.custom-bag-img {
+    height: 200px;
+    width: 200px;
+}
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 110px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* -------------------------------- Allauth templates customization */
+.custom-overlay {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 35px;
+    margin-top: 40px;
+    max-width: 500px;
+    /* Adjust the value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem;
+    /* mt-4 */
+}
+
+.allauth-form-inner-content input {
+    border-radius: 0;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+    /* btn */
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+    color: #5f5e5e;
+    /* text-info */
+    font-weight: bold;
+}
+
+.text-info {
+    color: #42a9c0 !important;
+}
+
+/* --------------------------------  Forms */
+.form-group {
+    padding-bottom: 10px;
+}
+
+/* -------------------------------- Add products form */
+.custom-product-form {
+    box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 35px;
+    margin-top: 40px;
+    max-width: 720px !important;
+}
+
+#div_id_sku,
+#div_id_name,
+#div_id_description,
+#div_id_price,
+#div_id_stock_quantity,
+#div_id_rating,
+#div_id_has_sizes,
+#div_id_image1,
+#div_id_image2,
+#div_id_image3 {
+    padding-top: 10px;
+}
+
+#id_image1,
+#id_image2,
+#id_image3 {
+    width: -webkit-fill-available;
+}
+
+
+/* ------------------------------------------------------------ Shopping Bag */
+
+.custom-favorites-mt {
+    margin-top: 15rem !important;
+}
+
+/*------------------------------------------------------------ Modal Backdrop */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; !important
+    width: 100vw;
+    height: 100vh;
+    pointer-events: auto;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+
+    /* Vertical line between nav elements on desktop screens */
+    .navbar-nav .nav-item {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .navbar-nav .nav-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 7px; /* Adjust to control the spacing */
+        transform: translateY(-50%);
+        border-left: 1px solid #000; /* Adjust color and width as needed */
+        height: 20px; /* Adjust height as needed */
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .display-4.logo-font.text-black {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 5px 10px 0px 10px;
+    }
+
+    .nav-item {
+        padding-left: 10px;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    #delivery-banner h4 {
+        font-size: .9rem;
+    }
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
+
+    .increment-qty,
+    .decrement-qty {
+        padding: .25rem .5rem !important;
+    }
+
+
+}
+
+/* Margin at top to push forms down on mobile */
+@media (max-width: 425px) {
+    .custom-overlay {
+        margin-top: 60px;
+    }
+
+    .custom-product-form {
+        margin-top: 100px;
+        width: 85%;
+    }
+
+    /* Styling for bag page on mobile screens*/
+    .custom-bag-img {
+        width: 100px;
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .mobile-name-size {
+        font-size: 13px;
+    }
+
+    .mobile-product-size {
+        font-size: 13px;
+        font-weight: 200;
+    }
+
+    .mobile-sku-size {
+        font-size: 10px;
+        font-weight: 100;
+    }
+
+    .message-container {
+        top: 150px;
+        right: 15px;
+    }
+
+    .card-background-cover {
+        width: min-content;
+    }
+}
+
+/* CSS for small screens (less than 320px) */
+@media (max-width: 320px) {
+    .quantity-control-container {
+        display: block; /* Ensure it stacks vertically */
+    }
+    .quantity-control-container .form-group {
+        border-top: 1px solid #dee2e6; /* Optional: Add a border between items */
+        padding-top: 10px; /* Optional: Add padding for spacing */
+    }
+    .spacer-row {
+        display: none; /* Hide spacer row on small screens */
+    }
+    .toast {
+        width: 90%;
+    }
+    .message-container {
+        right: 15px;
+        left: 50px;
+    }
+}
+
+/* CSS for small screens (less than 320px) */
+@media (max-width: 375px) {
+    .form-group {
+        width: 100%;
+    }
+
+    .input-group {
+        width: 100px;
+    }
+
+}
+
+/* Mailchimp form width for bigger screens */
+@media (min-width: 768px) {
+    #mc_embed_signup {
+        width: 500px !important;
+    }
+
+    .pt-lg {
+        padding-top: 15px !important;
+    }
+}
+
+/* Ensure all icons and text are centered and aligned horizontally */
+@media (max-width: 375px) {
+    .list-inline-item {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .list-inline-item .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-inline-item .nav-link > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-inline-item i {
+        margin-bottom: 1rem; /* Optional: add space between icon and text */
+    }
+
+    .list-inline-item p {
+        margin: 0;
+        font-size: 0.75rem; /* Adjust font size as needed */
+    }
+
+    .text-auth-shadow {
+        padding-top: 115px !important;
+    }
+
+    /* css for add a product form small screens */
+    .custom-product-form {
+        width: 90%;
+        padding: 0 1rem;
+    }
+
+    #id_image1,
+    #id_image2,
+    #id_image3 {
+        width: 80%;
+    }
+
+    .custom-product-form .form {
+        width: 100%;
+    }
+
+    .custom-product-form .form .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-product-form .text-center {
+        flex-direction: column;
+        gap: 0.5rem; /* Adjust the spacing between buttons for small screens */
+    }
+}
