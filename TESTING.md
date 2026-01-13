@@ -4,7 +4,8 @@
 
 Welcome to our B2C e-commerce platform, dedicated to providing high-quality yoga products for enthusiasts of all levels. Whether you're a seasoned practitioner or just beginning your yoga journey, our online store offers a variety of products to support your practice.
 
-Visit live [site](https://yoga-vibe-pp5-63b402220300.herokuapp.com/).
+Visit the live site: [YogaVibe](https://yoga-vibe-p5.onrender.com/)  
+(Updated link after redeploying on Render instead of Heroku)
 
 # Table of Contents
 * [User Story Testing](#user-story-testing)
